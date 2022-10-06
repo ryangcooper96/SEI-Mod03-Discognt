@@ -8,6 +8,7 @@ import LoginPage from "../LoginPage/LoginPage";
 import { ProtectedRoute } from "../../utils/route";
 import NavBar from "../../components/NavBar/NavBar";
 import ProtectedPage from "../ProtectedPage";
+import Marketplace from "../Marketplace/Marketplace";
 
 function App() {
   return (
@@ -17,7 +18,7 @@ function App() {
       </header>
       <Routes>
         <Route exact path="/" element={<HomePage />} />
-
+        <Route exact path="/marketplace" element={<Marketplace />} />
         <Route exact path="/signup" element={<SignupPage />} />
         <Route exact path="/login" element={<LoginPage />} />
         <Route
