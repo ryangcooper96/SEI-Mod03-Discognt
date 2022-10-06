@@ -11,7 +11,7 @@ import Footer from "../../components/Footer/Footer";
 
 function App() {
   return (
-    <div>
+    <div className="app-wrapper">
       <header className="header">
         <p>Totally Not Discogs I swear</p> <NavBar />
       </header>
