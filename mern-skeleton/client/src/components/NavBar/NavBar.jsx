@@ -7,19 +7,26 @@ const NavBar = () => {
   const { handleLogout, user } = useUser()
 
   let nav = user ?
-    <div>
+    <>
+      <h1>Discogn't</h1> 
+      <div>
       <NavLink to='/protected' className='NavBar-link'>Protected Route</NavLink>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <NavLink to='' className='NavBar-link' onClick={handleLogout}>LOG OUT</NavLink>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <span className='NavBar-welcome'>WELCOME, {user.name}</span>
-    </div>
+      </div>
+    </>
     :
-    <div>
+      <>
+      <h1>Totally Not Discogs I swear</h1> 
+      <div>
       <NavLink to='/login' className='NavBar-link'>LOG IN</NavLink>
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <NavLink to='/signup' className='NavBar-link'>SIGN UP</NavLink>
-    </div>;
+      </div>
+      </>
+    ;
 
   return (
     <div className='NavBar'>

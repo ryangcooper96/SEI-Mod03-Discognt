@@ -4,17 +4,17 @@ import { Route, Routes } from "react-router-dom";
 import HomePage from "../HomePage";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
-
 import { ProtectedRoute } from "../../utils/route";
 import NavBar from "../../components/NavBar/NavBar";
 import ProtectedPage from "../ProtectedPage";
+import Footer from "../../components/Footer/Footer";
 import Marketplace from "../Marketplace/Marketplace";
 
 function App() {
   return (
-    <div>
+    <div className="app-wrapper">
       <header className="header">
-        <p>MERN Skeleton</p> <NavBar />
+        <NavBar />
       </header>
       <Routes>
         <Route exact path="/" element={<HomePage />} />
@@ -31,6 +31,7 @@ function App() {
           }
         />
       </Routes>
+      <Footer />
     </div>
   );
 }
