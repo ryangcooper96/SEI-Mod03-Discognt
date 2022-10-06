@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="app-wrapper">
       <header className="header">
-        <p>Totally Not Discogs I swear</p> <NavBar />
+        <NavBar />
       </header>
       <Routes>
         <Route exact path="/" element={<HomePage />} />

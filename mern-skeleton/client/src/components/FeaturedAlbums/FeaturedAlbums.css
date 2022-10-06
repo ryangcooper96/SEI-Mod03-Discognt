@@ -1,0 +1,15 @@
+.cover {
+    background-color: #555555;
+    width: 150px;
+    height: 150px;
+    margin: 50px;
+    border-radius: 5px;
+}
+
+.featured-wrapper {
+text-align: center;
+}
+
+.cover-wrapper {
+    display: flex;
+}
