@@ -1,0 +1,28 @@
+.Results {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    border: 2px solid rgba(50, 50, 50, 0.25);;
+
+    background: whitesmoke;
+    border-radius: 17px;
+}
+
+.Results-list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 1vw;
+}
+
+.Results-list > * {
+    margin: 1vw;;
+}

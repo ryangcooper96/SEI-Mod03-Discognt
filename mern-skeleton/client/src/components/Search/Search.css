@@ -1,0 +1,11 @@
+.Search {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+    width: 100%;
+    box-sizing: border-box;
+
+    background: rgba(50, 50, 50, 0.25);
+    border-radius: 15px;
+}

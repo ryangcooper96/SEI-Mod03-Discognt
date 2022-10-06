@@ -1,0 +1,34 @@
+.ResultCard {
+    position: relative;
+    min-height: 250px;
+    width: 180px;
+
+    background: white;
+    border-radius: 10px;
+}
+
+.ResultCard-favourite {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.ResultCard-image {
+    height: 180px;
+    width: 180px;
+    background: rgba(50,50,50, 0.25);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.ResultCard-text {
+    margin: 10px;
+}
+
+.ResultCard-text h2 {
+    margin: 0;
+}
+
+.ResultCard-text h3 {
+    margin: 0;
+}
