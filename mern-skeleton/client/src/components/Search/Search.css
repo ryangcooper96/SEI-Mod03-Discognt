@@ -6,7 +6,6 @@
     width: 100%;
     box-sizing: border-box;
 
-    background: whitesmoke;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+    background: rgba(50, 50, 50, 0.25);
+    border-radius: 15px;
 }

@@ -1,0 +1,55 @@
+.FilterBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    border-radius: 50vmax;
+    
+    background: rgba(50, 50, 50, 0.5);
+    box-sizing: border-box;
+}
+
+.FilterBar button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 30px;
+    width: 30px;
+    
+    border: none;
+    border-radius: 15px;
+    
+    background: black;
+    color: whitesmoke;
+    
+    box-sizing: border-box;
+}
+
+.FilterBar select {
+    height: 30px;
+    width: 120px;
+    padding: 5px 5px 5px 5px;
+    margin-right: 5px;
+
+    outline: none;
+    border: none;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+    background: none;
+    box-sizing: border-box;
+}
+
+.FilterBar select::placeholder {
+    color: whitesmoke;
+}
+
+
+.FilterBar button span {
+    font-size: 24px;
+}
+
+.FilterBar select:focus {
+    color: white;
+}
