@@ -1,0 +1,55 @@
+.SearchBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-left: 50px;
+
+    border-radius: 50vmax;
+
+    background: rgb(50, 50, 50);
+    box-sizing: border-box;
+}
+
+.SearchBar input {
+    height: 30px;
+    width: 170px;
+    padding: 5px 5px 5px 15px;
+
+    outline: none;
+    border: none;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+    background: none;
+    box-sizing: border-box;
+}
+
+.SearchBar input::placeholder {
+    color: whitesmoke;
+}
+
+.SearchBar button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 30px;
+    width: 30px;
+
+    border: none;
+    border-radius: 15px;
+
+    background: black;
+    color: whitesmoke;
+
+    box-sizing: border-box;
+}
+
+.SearchBar button span {
+    font-size: 24px;
+}
+
+.SearchBar input:focus {
+    color: white;
+}
