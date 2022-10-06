@@ -1,0 +1,10 @@
+.Marketplace {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100vw;
+    padding: 2vw 7vw;
+    box-sizing: border-box;
+}

@@ -1,9 +1,12 @@
 import React from 'react'
+import SearchBar from '../SearchBar/SearchBar'
 import "./Search.css"
 
 function Search() {
   return (
-    <div>Search</div>
+    <div className='Search'>
+        <SearchBar />
+    </div>
   )
 }
 

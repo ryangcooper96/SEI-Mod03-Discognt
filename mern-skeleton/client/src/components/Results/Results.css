@@ -1,0 +1,16 @@
+.Results {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100%;
+    padding: 3vw 0;
+    box-sizing: border-box;
+
+    background: whitesmoke;
+}
+
+.Results > * {
+    margin: 1vw;
+}
