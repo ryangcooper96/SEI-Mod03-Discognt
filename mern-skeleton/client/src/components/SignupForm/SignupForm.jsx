@@ -65,6 +65,43 @@ function SignupForm({ updateMessage }) {
             <input type="password" className="form-control" placeholder="Confirm Password" value={state.passwordConf} name="passwordConf" onChange={handleChange} />
           </div>
         </div>
+
+        <div className="form-group">
+          <div className="col-sm-12">
+            <input type="text" className="form-control" placeholder="Address Line 1" value={state.name} name="address1" onChange={handleChange} />
+          </div>
+        </div>
+
+        <div className="form-group">
+          <div className="col-sm-12">
+            <input type="text" className="form-control" placeholder="Address Line 2" value={state.name} name="address2" onChange={handleChange} />
+          </div>
+        </div>
+
+        <div className="form-group">
+          <div className="col-sm-12">
+            <input type="text" className="form-control" placeholder="Address Line 3" value={state.name} name="address3" onChange={handleChange} />
+          </div>
+        </div>
+
+        <div className="form-group">
+          <div className="col-sm-12">
+            <input type="text" className="form-control" placeholder="zip/postal code" value={state.name} name="postcode" onChange={handleChange} />
+          </div>
+        </div>
+
+        <div className="form-group">
+          <div className="col-sm-12">
+            <input type="text" className="form-control" placeholder="Card number" value={state.name} name="creditcard" onChange={handleChange} />
+          </div>
+        </div>
+
+        <div className="form-group">
+          <div className="col-sm-12">
+            <input type="text" className="form-control" placeholder="Security number" value={state.name} name="CVC" onChange={handleChange} />
+          </div>
+        </div>
+
         <div className="form-group">
           <div className="col-sm-12 text-center">
             <button className="btn btn-default" disabled={isFormInvalid()}>Sign Up</button>&nbsp;&nbsp;
