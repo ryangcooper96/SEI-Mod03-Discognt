@@ -19,7 +19,7 @@ const NavBar = () => {
     </>
     :
       <>
-      <h1>Totally Not Discogs I swear</h1> 
+      <h1>Discogn't</h1> 
       <div>
       <NavLink to='/login' className='NavBar-link'>LOG IN</NavLink>
       &nbsp;&nbsp;|&nbsp;&nbsp;
