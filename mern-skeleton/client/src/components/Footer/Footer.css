@@ -2,5 +2,6 @@ footer {
     display: flex;
     justify-content: space-around;
     padding: 40px;
-    background-color: red;
+    background-color: rgba(50, 50, 50, 1);
+    color: whitesmoke;
 }
