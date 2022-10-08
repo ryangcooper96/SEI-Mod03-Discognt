@@ -1,0 +1,52 @@
+.ProductPage {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+
+    width: 100vw;
+    padding: 6vw 7vw;
+    box-sizing: border-box;
+}
+
+.ProductPage-productContainer {
+    padding: 0vw 4vw;
+    margin-bottom: 4vw;
+    width: 100%;
+    box-sizing: border-box;
+
+    /* border: 2px solid rgba(50, 50, 50, 0.1); */
+
+    background: whitesmoke;
+    border-radius: 17px;
+}
+
+.ProductPage-productInfo h1 {
+    font-family: 'Rubik Dirt', cursive;
+    margin: 0;
+    margin-top: -20px;
+    font-size: xx-large;
+    font-weight: 400;
+}
+
+.ProductPage-productInfo h2 {
+    font-family: 'Rubik Dirt', cursive;
+    margin: 0;
+    /* margin-top: -20px; */
+    font-size: x-large;
+    font-weight: 400;
+}
+
+.ProductPage-productInfo h3 {
+    font-family: 'Rubik Dirt', cursive;
+    margin: 0;
+    /* margin-top: -20px; */
+    font-size: large;
+    font-weight: 400;
+}
+
+.ProductPage-productInfo p {
+    margin: 10px 0 10px 0;
+    font-size: 14px;
+    font-weight: 200;
+}
