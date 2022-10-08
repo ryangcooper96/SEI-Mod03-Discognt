@@ -9,7 +9,6 @@ function ListingCard() {
         format: "LP Vinyl",
         description: "In really good nick!",
         price: 17.99,
-        shipping: 2.99,
     })
 
   return (
@@ -32,7 +31,7 @@ function ListingCard() {
         </div>
             <button className='ListingCard-button'>
                 <span>Add to Basket</span>
-                <span class="material-symbols-outlined">
+                <span className="material-symbols-outlined">
                     shopping_basket
                 </span>
             </button>

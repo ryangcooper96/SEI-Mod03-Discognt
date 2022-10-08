@@ -10,8 +10,6 @@
     background: whitesmoke;
     padding: 10px;
     border-radius: 5px;
-
-    border: 1.5px solid rgb(50,50,50)
 }
 
 .ListingCard hr {
@@ -93,7 +91,7 @@
     
     font-size: 14px;
     
-    background: rgb(50,50,50);
+    background: rgb(120,120,120);
     color: whitesmoke;
     
     outline: none;
@@ -108,11 +106,11 @@
 }
 
 .ListingCard-button:hover {
-    background: silver;
+    background: rgb(50,50,50);
     transition: 0.5s;
 }
 
 .ListingCard-button:active {
-    transform: scale(0.95);
+    transform: scale(0.95) translateY(5px);
     transition: 0.3s;
 }

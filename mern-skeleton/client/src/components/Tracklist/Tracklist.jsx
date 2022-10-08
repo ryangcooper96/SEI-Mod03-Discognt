@@ -7,9 +7,11 @@ function Tracklist() {
         <h2>Tracklist</h2>
     <table className='Tracklist-table'>
         <thead>
-            <th>#</th>
-            <th>Song</th>
-            <th className='duration'>Duration</th>
+            <tr>
+                <th>#</th>
+                <th>Song</th>
+                <th className='duration'>Duration</th>
+            </tr>
         </thead>
         <tbody>
             <tr>

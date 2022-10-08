@@ -23,6 +23,10 @@
     font-weight: 200;
 }
 
+.Tracklist-table tr td:first-child {
+    text-align: left;
+}
+
 .Tracklist-table th, td {
     padding: 5px;
 }

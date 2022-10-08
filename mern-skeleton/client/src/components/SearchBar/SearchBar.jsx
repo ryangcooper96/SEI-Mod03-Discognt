@@ -11,7 +11,7 @@ function SearchBar() {
 
   return (
     <div className='SearchBar'>
-        { open ? <></> : <input className="SearchBar-input" type="text" placeholder='Search.'></input>}
+        { open ? <input className="SearchBar-input" type="text" placeholder='Search.'></input> : <></>}
         <button className='SearchBar-button' onClick={handleClick}><span className="material-symbols-outlined">search</span></button>
     </div>
   )

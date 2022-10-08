@@ -1,4 +1,6 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+
 import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs'
 import ImageViewer from '../../components/ImageViewer/ImageViewer'
 import Tracklist from '../../components/Tracklist/Tracklist'
@@ -6,9 +8,15 @@ import Listings from "../../components/Listings/Listings"
 import "./ProductPage.css"
 
 function ProductPage() {
+
+    const navigate = useNavigate()
+
   return (
     <div className='ProductPage'>
-        <BreadCrumbs />
+        <div className='ProductPage-pageControl'>
+            <span className="material-symbols-outlined" onClick={() => (navigate(-1))}>arrow_back</span>
+            <BreadCrumbs />
+        </div>
         <div className='ProductPage-productContainer'>
             <div className='ProductPage-productInfo'>
             <div className='ProductPage-favourite'><span className="material-symbols-outlined">favorite</span></div>

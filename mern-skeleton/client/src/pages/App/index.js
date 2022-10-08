@@ -12,7 +12,6 @@ import Marketplace from "../Marketplace/Marketplace";
 import Dashboard from "../Dashboard/Dashboard";
 import ProductPage from "../ProductPage/ProductPage";
 
-
 function App() {
   return (
     <div className="app-wrapper">
