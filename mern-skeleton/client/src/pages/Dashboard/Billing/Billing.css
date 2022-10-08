@@ -1,11 +1,11 @@
-form, .creditcard-wrapper {
+.billingForm, .creditcard-wrapper {
     display: flex;
     flex-direction: column;
     width: 50vw;
  margin-top: 10px;
 }
 
-input, button {
+.billingElement {
     margin-top: 10px;
 }
 
