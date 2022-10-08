@@ -1,7 +1,22 @@
 footer {
     display: flex;
     justify-content: space-around;
-    padding: 40px;
-    background-color: rgba(50, 50, 50, 1);
+    align-items: center;
+
     color: whitesmoke;
+    background: rgb(50,50,50);
+    padding: 2vw 5vw;
+}
+
+.social {
+    color: inherit;
+    margin: 0 8px;
+    font-size: 12px;
+    transition: 0.5s;
+}
+
+.social :hover {
+    transform-origin: center;
+    transform: scale(1.2);
+    transition: 0.5s;
 }

@@ -5,12 +5,41 @@
 
     background: white;
     border-radius: 10px;
+    transition: 0.5s;
+}
+
+.ResultCard:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 9px 1px rgb(180,180,180);
+    transition: 0.5s;
 }
 
 .ResultCard-favourite {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    top: 7px;
+    right: 7px;
+}
+
+.ResultCard-favourite span {
+    font-size: 24px;
+    font-weight: 200;
+    color: rgba(10,10,10, 0.75);
+    transition: 0.5s;
+}
+
+.ResultCard-favourite span:hover {
+    transform: scale(1.2);
+    font-weight: 400;
+    color: rgba(200,10,10, 0.75);
+    transition: 0.5s;
+}
+
+.ResultCard-favourite .material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }
 
 .ResultCard-image {
@@ -21,14 +50,29 @@
     border-top-right-radius: 10px;
 }
 
+.ResultCard-image img {
+    height: 180px;
+    width: 180px;
+    object-fit: cover;
+    overflow: hidden;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
 .ResultCard-text {
     margin: 10px;
 }
 
 .ResultCard-text h2 {
     margin: 0;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .ResultCard-text h3 {
     margin: 0;
+    font-size: 16px;
+    font-weight: 300;
+    color: rgb(100,100,100);
 }

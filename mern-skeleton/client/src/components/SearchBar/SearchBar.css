@@ -3,17 +3,16 @@
     justify-content: space-between;
     align-items: center;
 
-    margin-left: 50px;
-
     border-radius: 50vmax;
 
-    background: rgba(50, 50, 50, 0.5);
+    background: rgb(180,180,180);
     box-sizing: border-box;
+    /* border: 2px solid rgb(50,50,50); */
 }
 
 .SearchBar input {
     height: 30px;
-    width: 170px;
+    width: 100px;
     padding: 5px 5px 5px 15px;
 
     outline: none;
@@ -26,7 +25,7 @@
 }
 
 .SearchBar input::placeholder {
-    color: whitesmoke;
+    color: rgb(90,90,90);
 }
 
 .SearchBar button {
@@ -40,8 +39,8 @@
     border: none;
     border-radius: 15px;
 
-    background: black;
-    color: whitesmoke;
+    background: rgb(50, 50, 50);
+    color: rgb(150,150,150);
 
     box-sizing: border-box;
 }
@@ -51,5 +50,5 @@
 }
 
 .SearchBar input:focus {
-    color: white;
+    color: rgb(50,50,50);
 }
