@@ -1,5 +1,6 @@
 import React from 'react'
 import Results from '../../components/Results/Results'
+import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs'
 import "./Marketplace.css"
 
 function Marketplace() {
@@ -9,6 +10,7 @@ function Marketplace() {
             <h1>Marketplace</h1>
             <p>Find exactly what you're looking for in our marketplace... </p>
         </div>
+        <BreadCrumbs />
         <Results />
     </div>
   )
