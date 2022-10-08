@@ -5,16 +5,17 @@ import Billing from './Billing/Billing'
 
 import Listings from './Listings/Listings'
 import Security from './Security/Security'
+import './Dashboard.css'
 
 function Dashboard() {
   return (
-    <div>
-      Dashboard
+    <div className='dashboard-wrapper'>
+      
 
-      <div className='sidebar-wrapper'>sidebar 
-        <NavLink to='/dashboard/listings'>Listings</NavLink>
-        <NavLink to='/dashboard/security'>Account Security</NavLink>
-        <NavLink to='/dashboard/billing'>Billing Details</NavLink></div>
+      <div className='sidebar-wrapper'><h3>Dashboard</h3>
+        <NavLink to='/dashboard/listings' className='panel-link'>Listings</NavLink>
+        <NavLink to='/dashboard/security' className='panel-link'>Account Security</NavLink>
+        <NavLink to='/dashboard/billing' className='panel-link'>Billing Details</NavLink></div>
       <div className='panel-wrapper'>
         <Routes>
         <Route path='/listings' element={<Listings/>}/>
