@@ -50,7 +50,7 @@
 
 .ImageViewer-additionalImageContainer>img {
     height: 90px;
-    width: 120px;
+    width: 90px;
     margin: 5px;
     object-fit: cover;
     border-radius: 5px;

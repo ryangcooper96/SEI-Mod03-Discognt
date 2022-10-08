@@ -70,7 +70,7 @@
     font-weight: 500;
 }
 
-.ListingCard-condition, .ListingCard-price {
+.ListingCard-condition, .ListingCard-price, .ListingCard-format {
     font-weight: 200;
     display: flex;
     flex-flow: row nowrap;
