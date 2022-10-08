@@ -4,10 +4,15 @@
   align-items: center;
   margin: 0 0 0px;
   width: 100%;
+  padding: 40px;
+  background-color: rgba(50, 50, 50, 1);;
+  color: whitesmoke;
 }
 
 .NavBar-link {
   margin: 0 10px;
+  text-decoration: none;
+  color: whitesmoke;
 }
 
 .NavBar-welcome {

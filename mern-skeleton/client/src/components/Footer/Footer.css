@@ -3,8 +3,8 @@ footer {
     justify-content: space-around;
     align-items: center;
 
-    color: rgb(50,50,50);
-    background: whitesmoke;
+    color: whitesmoke;
+    background: rgb(50,50,50);
     padding: 2vw 5vw;
 }
 
