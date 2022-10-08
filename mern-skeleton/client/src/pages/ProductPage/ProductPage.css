@@ -9,22 +9,64 @@
     box-sizing: border-box;
 }
 
+.ProductPage-productContainer > * {
+    margin: 15px;
+}
+
 .ProductPage-productContainer {
-    padding: 0vw 4vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    padding: 2vw 4vw;
     margin-bottom: 4vw;
     width: 100%;
     box-sizing: border-box;
 
     /* border: 2px solid rgba(50, 50, 50, 0.1); */
-
+    
     background: whitesmoke;
     border-radius: 17px;
+}
+
+.ProductPage-productInfo {
+    position: relative;
+    max-width: 45%;
+}
+
+.ProductPage-favourite {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+
+.ProductPage-favourite span {
+    font-size: 48px;
+    font-weight: 200;
+    color: rgba(10, 10, 10, 0.75);
+    transition: 0.5s;
+}
+
+.ProductPage-favourite span:hover {
+    transform: scale(1.2);
+    font-weight: 400;
+    color: rgba(200, 10, 10, 0.75);
+    transition: 0.5s;
+}
+
+.ProductPage-favourite .material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }
 
 .ProductPage-productInfo h1 {
     font-family: 'Rubik Dirt', cursive;
     margin: 0;
-    margin-top: -20px;
+    margin-top: 10px;
     font-size: xx-large;
     font-weight: 400;
 }
@@ -49,4 +91,12 @@
     margin: 10px 0 10px 0;
     font-size: 14px;
     font-weight: 200;
+}
+
+.ProductPage .ImageViewer {
+    max-width: 45%;
+}
+
+.ProductPage .Listings {
+    max-width: 45%;
 }

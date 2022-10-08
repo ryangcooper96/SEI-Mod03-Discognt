@@ -3,16 +3,20 @@
     flex-flow: column nowrap;
     justify-content: space-evenly;
     align-items: center;
-    background: silver;
-    height: 406px;
-    width: 424px;
+    background: white;
+    height: 466px;
+    width: 364px;
+
+    border-radius: 10px;
 }
 
 .ImageViewer-mainImageContainer {
-    background: silver;
-    height: 300px;
-    width: 420px;
+    background: white;
+    height: 360px;
+    width: 360px;
     /* overflow: hidden; */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .ImageViewer-mainImageContainer>img {
@@ -20,6 +24,9 @@
     width: 100%;
     object-fit: contain;
     transition: 0.5s;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
 }
 
 .ImageViewer-mainImageContainer>img:hover {
@@ -33,10 +40,12 @@
     flex-flow: row nowrap;
     justify-content: flex-start;
     align-items: center;
-    background: whitesmoke;
+    background: white;
     height: 100px;
-    width: 420px;
+    width: 360px;
     overflow: scroll;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 .ImageViewer-additionalImageContainer>img {
@@ -44,6 +53,7 @@
     width: 120px;
     margin: 5px;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 .selected {
