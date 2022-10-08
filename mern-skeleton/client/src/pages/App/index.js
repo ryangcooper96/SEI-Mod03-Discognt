@@ -9,6 +9,7 @@ import NavBar from "../../components/NavBar/NavBar";
 import ProtectedPage from "../ProtectedPage";
 import Footer from "../../components/Footer/Footer";
 import Marketplace from "../Marketplace/Marketplace";
+import Dashboard from "../Dashboard/Dashboard";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route exact path="/dashboard/*" element={<Dashboard />} />
       </Routes>
       <Footer />
     </div>
