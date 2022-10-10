@@ -1,8 +1,8 @@
 .Marketplace {
     display: flex;
     flex-flow: column nowrap;
-    justify-content: center;
-    align-items: flex-start;
+    /* justify-content: flex-start;
+    align-items: flex-start; */
 
     width: 100vw;
     padding: 6vw 7vw;
@@ -11,7 +11,7 @@
 
 .Marketplace-title {
     padding: 0vw 4vw;
-    margin-bottom: 4vw;
+    margin-bottom: 2%;
     width: 100%;
     box-sizing: border-box;
         
@@ -30,7 +30,42 @@
 }
 
 .Marketplace-title p {
-    margin: 10px 0 10px 0;
+    margin: 2% 0 2% 0;
     font-size: 14px;
     font-weight: 200;
+}
+
+/* Mobile */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .Marketplace {
+        padding: 8% 5%;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .Marketplace {
+        padding: 8% 5%;
+    }
+}
+
+/* Laptop / Small Screen */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .Marketplace {
+        padding: 6% 4%;
+    }
+}
+
+/* Desktop / Large Screen */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .Marketplace {
+        padding: 5% 3%;
+    }
+}
+
+/* Tv / X-Large Screen */
+@media screen and (min-width: 1021px) {
+    .Marketplace {
+        padding: 4% 2%;
+    }
 }

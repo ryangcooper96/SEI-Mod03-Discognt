@@ -19,10 +19,39 @@
     flex-flow: row wrap;
     justify-content: center;
     align-items: flex-start;
-
-    padding: 2.5vw;
 }
 
-.Results-list > * {
-    margin: 2vw;
+/* Mobile */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .Results-list {
+        padding: 5%;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .Results-list {
+        padding: 2%;
+    }
+}
+
+/* Laptop / Small Screen */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .Results-list {
+        padding: 2%;
+    }
+}
+
+/* Desktop / Large Screen */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .Results-list {
+        padding: 2%;
+    }
+}
+
+/* Tv / X-Large Screen */
+@media screen and (min-width: 1221px) {
+    .Results-list {
+        padding: 1%;
+    }
 }

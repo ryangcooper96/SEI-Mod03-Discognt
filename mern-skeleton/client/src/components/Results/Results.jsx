@@ -11,6 +11,7 @@ function Results() {
             <ResultCard />
             <ResultCard />
             <ResultCard />
+            <ResultCard />
         </div>
     </div>
   )
