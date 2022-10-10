@@ -8,7 +8,7 @@ const NavBar = () => {
 
   let nav = user ?
     <>
-      <h1>Discogn't</h1> 
+      <span className='NavBar-logo'>Discogn't</span> 
       <div>
       <NavLink to='/protected' className='NavBar-link'>Protected Route</NavLink>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -19,7 +19,7 @@ const NavBar = () => {
     </>
     :
       <>
-      <NavLink to='/' className='NavBar-link'><h1>Discogn't</h1></NavLink>
+      <NavLink to='/' className='NavBar-link'><span className='NavBar-logo'>Discogn't</span></NavLink>
       
       <div>
       <NavLink to='/login' className='NavBar-link'>LOG IN</NavLink>

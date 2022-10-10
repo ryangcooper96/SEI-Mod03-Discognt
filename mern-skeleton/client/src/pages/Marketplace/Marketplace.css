@@ -4,6 +4,8 @@
     /* justify-content: flex-start;
     align-items: flex-start; */
 
+    margin-top: 30px;
+
     width: 100vw;
     padding: 6vw 7vw;
     box-sizing: border-box;
@@ -38,34 +40,34 @@
 /* Mobile */
 @media screen and (min-width: 320px) and (max-width: 480px) {
     .Marketplace {
-        padding: 8% 5%;
+        padding: 12% 5%;
     }
 }
 
 /* Tablet */
 @media screen and (min-width: 480px) and (max-width: 768px) {
     .Marketplace {
-        padding: 8% 5%;
+        padding: 12% 5%;
     }
 }
 
 /* Laptop / Small Screen */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .Marketplace {
-        padding: 6% 4%;
+        padding: 8% 4%;
     }
 }
 
 /* Desktop / Large Screen */
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
     .Marketplace {
-        padding: 5% 3%;
+        padding: 6% 3%;
     }
 }
 
 /* Tv / X-Large Screen */
 @media screen and (min-width: 1021px) {
     .Marketplace {
-        padding: 4% 2%;
+        padding: 6% 2%;
     }
 }
