@@ -11,3 +11,7 @@
 	position: relative;
 	min-height: 100vh;
 }
+
+.page-wrapper {
+	margin-top: 35px;
+}

@@ -18,23 +18,25 @@ function App() {
       <header className="header">
         <NavBar />
       </header>
-      <Routes>
-        <Route exact path="/" element={<HomePage />} />
-        <Route exact path="/marketplace" element={<Marketplace />} />
-        <Route exact path="/marketplace/:product" element={<ProductPage />} />
-        <Route exact path="/signup" element={<SignupPage />} />
-        <Route exact path="/login" element={<LoginPage />} />
-        <Route
-          exact
-          path="/protected"
-          element={
-            <ProtectedRoute>
-              <ProtectedPage />
-            </ProtectedRoute>
-          }
-        />
-        <Route exact path="/dashboard/*" element={<Dashboard />} />
-      </Routes>
+      <div className="page-wrapper">
+        <Routes>
+          <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/marketplace" element={<Marketplace />} />
+          <Route exact path="/marketplace/:product" element={<ProductPage />} />
+          <Route exact path="/signup" element={<SignupPage />} />
+          <Route exact path="/login" element={<LoginPage />} />
+          <Route
+            exact
+            path="/protected"
+            element={
+              <ProtectedRoute>
+                <ProtectedPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route exact path="/dashboard/*" element={<Dashboard />} />
+        </Routes>
+      </div>
       <Footer />
     </div>
   );
