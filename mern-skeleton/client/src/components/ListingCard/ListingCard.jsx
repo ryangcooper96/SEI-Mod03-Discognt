@@ -14,11 +14,11 @@ function ListingCard() {
   return (
     <div className='ListingCard'>
         <div className='ListingCard-user'>
-            <span class="material-symbols-outlined">
+            <span className="material-symbols-outlined">
                 account_circle
             </span>
             <span>{listing.user.username} | {listing.user.rating} </span>
-            <span class="material-symbols-outlined">
+            <span className="material-symbols-outlined">
                 star
             </span>
         </div>

@@ -1,20 +1,19 @@
 .Tracklist {
-    margin-top: 30px;
     background: white;
-    width:100%;
     padding: 15px;
     box-sizing: border-box;
     border-radius: 10px;
 }
 
 .Tracklist h2 {
-    padding: 0px 0 10px 0;
+    margin: 0;
     font-family: 'Rubik Dirt', cursive;
     font-weight: 300;
 }
 
 .Tracklist-table {
     width: 100%;
+    margin-top: 10px;
     text-align: right;
     border: 1px solid rgb(150,150,150);
     border-collapse: collapse;
@@ -23,8 +22,21 @@
     font-weight: 200;
 }
 
-.Tracklist-table tr td:first-child {
+.Tracklist-table tr td:first-child,
+.Tracklist-table tr th:first-child {
+    width: 30px;
+    text-align: center;
+}
+
+.Tracklist-table tr td:nth-child(2),
+.Tracklist-table tr th:nth-child(2) {
     text-align: left;
+}
+
+.Tracklist-table tr td:nth-child(3),
+.Tracklist-table tr th:nth-child(3) {
+    width: 80px;
+    text-align: center;
 }
 
 .Tracklist-table th, td {

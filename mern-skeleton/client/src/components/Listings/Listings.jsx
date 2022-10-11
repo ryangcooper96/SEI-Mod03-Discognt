@@ -8,6 +8,8 @@ function Listings() {
         <h2>Listings</h2>
         <div className='Listings-container'>
             <ListingCard />        
+            <ListingCard />        
+            <ListingCard />        
         </div>
     </div>
   )

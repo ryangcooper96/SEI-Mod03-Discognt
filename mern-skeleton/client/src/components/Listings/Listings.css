@@ -1,7 +1,6 @@
 .Listings {
     border-radius: 10px;
     background: white;
-    width: 50%;
     padding: 15px;
     box-sizing: border-box;
 }
@@ -10,4 +9,5 @@
     font-family: 'Rubik Dirt', cursive;
     font-weight: 300;
     margin: 0;
+    /* padding: 0px 0 10px 0; */
 }

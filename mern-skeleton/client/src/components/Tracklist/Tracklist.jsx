@@ -1,11 +1,21 @@
 import React from 'react'
+import { useState } from 'react'
 import "./Tracklist.css"
 
 function Tracklist() {
+
+    const [open, setOpen] = useState(false);
+
+    const handleClick = () => {
+        setOpen(!open)
+    }
+
   return (
-    <div className='Tracklist'>
+    <>
+    { open ? 
+    <div className='Tracklist open' onClick={handleClick}>
         <h2>Tracklist</h2>
-    <table className='Tracklist-table'>
+        <table className='Tracklist-table'>
         <thead>
             <tr>
                 <th>#</th>
@@ -67,6 +77,10 @@ function Tracklist() {
         </tbody>
     </table>
     </div>
+    :
+    <div className='Tracklist closed' onClick={handleClick}><h2>Tracklist</h2></div>
+    }
+    </>
   )
 }
 
