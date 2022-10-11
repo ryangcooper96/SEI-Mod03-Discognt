@@ -10,7 +10,7 @@ const NavBar = () => {
     <>
       <span className='NavBar-logo'>Discogn't</span> 
       <div>
-      <NavLink to='/protected' className='NavBar-link'>Protected Route</NavLink>
+      <NavLink to='/dashboard' className='NavBar-link'>Protected Route</NavLink>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
       <NavLink to='' className='NavBar-link' onClick={handleLogout}>LOG OUT</NavLink>
       &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;

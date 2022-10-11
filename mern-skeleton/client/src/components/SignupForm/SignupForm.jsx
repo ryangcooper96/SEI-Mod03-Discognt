@@ -11,7 +11,12 @@ function SignupForm({ updateMessage }) {
     name: '',
     email: '',
     password: '',
-    passwordConf: ''
+    passwordConf: '',
+    address1: '',
+    address2: '',
+    address3: '',
+    postcode: '',
+
   });
 
   const handleChange = (e) => {
@@ -68,37 +73,25 @@ function SignupForm({ updateMessage }) {
 
         <div className="form-group">
           <div className="col-sm-12">
-            <input type="text" className="form-control" placeholder="Address Line 1" value={state.name} name="address1" onChange={handleChange} />
+            <input type="text" className="form-control" placeholder="Address Line 1" value={state.address1} name="address1" onChange={handleChange} />
           </div>
         </div>
 
         <div className="form-group">
           <div className="col-sm-12">
-            <input type="text" className="form-control" placeholder="Address Line 2" value={state.name} name="address2" onChange={handleChange} />
+            <input type="text" className="form-control" placeholder="Address Line 2" value={state.address2} name="address2" onChange={handleChange} />
           </div>
         </div>
 
         <div className="form-group">
           <div className="col-sm-12">
-            <input type="text" className="form-control" placeholder="Address Line 3" value={state.name} name="address3" onChange={handleChange} />
+            <input type="text" className="form-control" placeholder="Address Line 3" value={state.address3} name="address3" onChange={handleChange} />
           </div>
         </div>
 
         <div className="form-group">
           <div className="col-sm-12">
-            <input type="text" className="form-control" placeholder="zip/postal code" value={state.name} name="postcode" onChange={handleChange} />
-          </div>
-        </div>
-
-        <div className="form-group">
-          <div className="col-sm-12">
-            <input type="text" className="form-control" placeholder="Card number" value={state.name} name="creditcard" onChange={handleChange} />
-          </div>
-        </div>
-
-        <div className="form-group">
-          <div className="col-sm-12">
-            <input type="text" className="form-control" placeholder="Security number" value={state.name} name="CVC" onChange={handleChange} />
+            <input type="text" className="form-control" placeholder="zip/postal code" value={state.postcode} name="postcode" onChange={handleChange} />
           </div>
         </div>
 

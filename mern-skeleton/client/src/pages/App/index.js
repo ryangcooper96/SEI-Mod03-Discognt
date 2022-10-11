@@ -27,14 +27,13 @@ function App() {
           <Route exact path="/login" element={<LoginPage />} />
           <Route
             exact
-            path="/protected"
+            path="/dashboard/*"
             element={
               <ProtectedRoute>
-                <ProtectedPage />
+                <Dashboard />
               </ProtectedRoute>
             }
           />
-          <Route exact path="/dashboard/*" element={<Dashboard />} />
         </Routes>
       </div>
       <Footer />
