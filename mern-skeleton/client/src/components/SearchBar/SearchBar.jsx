@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import "./SearchBar.css"
 
 function SearchBar( { query, setQuery } ) {
@@ -7,12 +7,8 @@ function SearchBar( { query, setQuery } ) {
     const handleClick = () => {setOpen(!open)}
 
     const handleChange = (e) => {
-      if(e.target.value) {
         setQuery(e.target.value)
-      } else {
-        setQuery(undefined)
-      }
-    };
+    };  
 
   return (
     <div className='SearchBar'>

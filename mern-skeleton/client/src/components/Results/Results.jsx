@@ -37,25 +37,21 @@ function Results() {
   //           </div>
   //         );  
 
+
   // SECOND ATTEMPT
 
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [results, setResults] = useState([]);
-  const [query, setQuery] = useState(undefined);
+  const [query, setQuery] = useState('');
       
   useEffect(() => {
     async function getResults() {
-      await fetch("http://localhost:3000/api/discogs/search/releases/?query=" + query) //  + "&per_page=16&page=1"
-        .then((res) => {
-          if (res.ok) return res.json();
-          throw new Error("Albums not found.");
-        })
+      await discogs.searchForReleases((query ? query : undefined))
         .then(
           (result) => {
             setIsLoaded(true);
             setResults(result);
-            console.log(result);
           },
           (error) => {
             setIsLoaded(true);
@@ -63,8 +59,16 @@ function Results() {
           }
         )
     }
-    // invoke
-    getResults()
+    // timeout function waits until user has finished typing to make request
+    // https://stackoverflow.com/questions/42217121/how-to-start-search-only-when-user-stops-typing
+    const delayDebounceFn = setTimeout(() => {
+      console.log(query)
+      getResults()
+        
+    }, 1000)
+  
+    return () => clearTimeout(delayDebounceFn)
+
   }, [query])
 
   if (error) {
