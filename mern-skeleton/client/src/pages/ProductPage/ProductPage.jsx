@@ -17,7 +17,6 @@ function ProductPage() {
 
     const { id } = useParams();
 
-
     useEffect(() => {
         async function getResult() {
             console.log(id)
@@ -27,29 +26,31 @@ function ProductPage() {
         }
         getResult()
     }, [])    
+    
+    return (
+      <div className='ProductPage'>
+          <div className='ProductPage-pageControl'>
+              <span className="material-symbols-outlined" onClick={() => (navigate(-1))}>arrow_back</span>
+              {/* <BreadCrumbs /> */}
+              <div className='ProductPage-favourite'><span className="material-symbols-outlined">favorite</span></div>
+          </div>
+          {result ? (
+          <div className='ProductPage-productContainer'>
+              <div className='ProductPage-productInfo' onClick={() => (setOpen(!open))}>
+                  <h1>{result.title}</h1>
+                  {/* <h2>{result.artists.map((artist) => (artist.name))}</h2> */}
+                  <h3>{result.released_formatted}</h3>
+                  {/* <h3>{result.labels.map((label) => (label.name))}</h3> */}
+                  {open ? <p className='open'>{result.notes}</p> : <p className='closed'>{result.notes}</p>}                
+              </div>    
+              <Tracklist tracklist={result.tracklist} />
+              {/* <ImageViewer images={result.images}/> */}
+              <Listings />
+          </div>
+          ) : <></>}
+      </div>
+    )
 
-
-  return (
-    <div className='ProductPage'>
-        <div className='ProductPage-pageControl'>
-            <span className="material-symbols-outlined" onClick={() => (navigate(-1))}>arrow_back</span>
-            {/* <BreadCrumbs /> */}
-            <div className='ProductPage-favourite'><span className="material-symbols-outlined">favorite</span></div>
-        </div>
-            <div className='ProductPage-productContainer'>
-            <div className='ProductPage-productInfo' onClick={() => (setOpen(!open))}>
-                <h1>{result.title}</h1>
-                <h2>{result.artists.map((artist) => (artist.name))}</h2>
-                <h3>{result.released_formatted}</h3>
-                <h3>{result.labels.map((label) => (label.name))}</h3>
-                {open ? <p className='open'>{result.notes}</p> : <p className='closed'>{result.notes}</p>}                
-            </div>    
-            <Tracklist tracklist={result.tracklist} />
-            <ImageViewer />
-            <Listings />
-        </div>
-    </div>
-  )
 }
 
 export default ProductPage

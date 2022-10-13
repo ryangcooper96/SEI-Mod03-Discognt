@@ -14,11 +14,12 @@ function Results() {
       
   useEffect(() => {
     async function getResults() {
-      await discogs.searchForReleases((query ? query : undefined))
+      await discogs.searchDatabase(query)
         .then(
-          (result) => {
+          (data) => {
             setIsLoaded(true);
-            setResults(result);
+            setResults(data.results);
+            console.log(data.results)
           },
           (error) => {
             setIsLoaded(true);
@@ -49,7 +50,6 @@ function Results() {
     return (<div className='Results'>
               <Search query={query} setQuery={setQuery}/>
               <div className='Results-list'>
-                Loading...
               </div>
             </div>);
   } else {

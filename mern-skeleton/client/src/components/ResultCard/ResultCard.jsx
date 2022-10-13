@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom"
 import "./ResultCard.css"
 
+
 function ResultCard( { result }) {
   return (
     <div className='ResultCard'>
