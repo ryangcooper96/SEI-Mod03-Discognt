@@ -177,29 +177,26 @@
 /* @media screen and (min-width: 769px) and (max-width: 1024px) { */
 @media screen and (min-width: 769px) {
     
-        .ImageViewer {
-            order: 2;
-            width: calc(50% - 5px);
-        }
+    .ImageViewer {
+        order: 2;
+        width: calc(50% - 5px);
+    }
         
-        .ProductPage-productInfo {
-            order: 1;
-            width: calc(50% - 5px);
-            box-sizing: border-box;
-        }
+    .ProductPage-productInfo {
+        order: 1;
+        width: calc(50% - 5px);
+        box-sizing: border-box;
+    }
         
-        .Tracklist {
-            order: 3;
-            width: calc(50% - 5px);
-        }
+    .Tracklist {
+        order: 3;
+        width: calc(50% - 5px);
+    }
     
-        .Listings {
-            order: 4;
-            width: calc(50% - 5px);
-            /* align-self: flex-end;
-            justify-self: flex-start; */
-            /* justify-self: baseline; */
-        }
+    .Listings {
+        order: 4;
+        width: calc(50% - 5px);
+    }
 }
 
 

@@ -3,11 +3,11 @@ import FilterBar from '../FilterBar/FilterBar'
 import SearchBar from '../SearchBar/SearchBar'
 import "./Search.css"
 
-function Search() {
+function Search( { query, setQuery } ) {
   return (
     <div className='Search'>
         <FilterBar />
-        <SearchBar />
+        <SearchBar query={query} setQuery={setQuery}/>
     </div>
   )
 }
