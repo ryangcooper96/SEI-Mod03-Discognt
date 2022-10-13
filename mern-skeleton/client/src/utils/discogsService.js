@@ -1,5 +1,4 @@
-// this is a discogsService file in the backend with the newer syntax so I can test
-const BASE_URL = "http://localhost:3001/api/discogs/";
+const BASE_URL = "http://localhost:3000/api/discogs/";
 
 let searchParams = new URLSearchParams({
   query: "",
@@ -33,7 +32,11 @@ function getAlbumById(albumId) {
 // required parameter: artist id (number), returns artist object
 function getArtistById(artistId) {
   return fetch(BASE_URL + "artists/" + artistId, {
-    method: "GET",
+    // method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Clear-Site-Data": "*",
+    },
   }).then((res) => {
     if (res.ok) return res.json();
     throw new Error("Artist not found.");

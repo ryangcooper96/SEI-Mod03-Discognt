@@ -2,6 +2,7 @@ import disconnect from "disconnect";
 import dotenv from "dotenv";
 
 dotenv.config();
+console.log(dotenv.config());
 
 const Discogs = disconnect.Client;
 const db = new Discogs({
