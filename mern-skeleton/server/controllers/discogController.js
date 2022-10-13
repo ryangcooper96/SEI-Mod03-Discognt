@@ -35,7 +35,12 @@ export async function getArtistById(req, res, next) {
 export async function getReleasesByArtistId(req, res, next) {
   try {
     const { id } = req.params;
-    const { sort, sort_order, page, per_page } = req.query;
+    const {
+      sort = "year",
+      sort_order = "asc",
+      page = 1,
+      per_page = 50,
+    } = req.query;
     const releases = await db.getArtistReleases(id, {
       sort,
       sort_order,
@@ -73,8 +78,8 @@ export async function searchDatabase(req, res, next) {
       year,
       format,
       track,
-      page,
-      per_page,
+      page = 1,
+      per_page = 50,
     } = req.query;
     const results = await db.search({
       query,

@@ -1,24 +1,5 @@
 const BASE_URL = "http://localhost:3000/api/discogs/";
 
-let searchParams = new URLSearchParams({
-  query: "",
-  type: "",
-  title: "",
-  release_title: "",
-  artist: "",
-  label: "",
-  genre: "",
-  style: "",
-  country: "",
-  year: "",
-  format: "",
-  track: "",
-  sort: null || "year",
-  sort_order: null || "asc",
-  page: null || 1,
-  per_page: null || 50,
-});
-
 // required parameter: album id (number), returns album object
 function getAlbumById(albumId) {
   return fetch(BASE_URL + "releases/" + albumId, {
@@ -45,25 +26,21 @@ function getArtistById(artistId) {
 
 // required parameter: artist id (number)
 //
-// optional parameters:
+// optional parameters (in one object):
+// searchArgs = {
 // sort: "year" || "title" || "format"
 // sort_order: "asc" || "desc"
-// page: (number)   //  which page to show
-// per_page: (number) // number of search results shown per page
-
-// optional parameters can be set like this (currently):
-// searchParams.set("sort_order", "desc");
-// searchParams.set("per_page", 10);
+// page: Number || 1,
+// per_page: Number || 50, (100 max)
+// }
 //
 // results returned in this format:
-//
 // {
 //  pagination: {pagination data},
 //  releases: [{album1}, {album2}, {...}]
 // }
-//
-function getReleasesByArtistId(artistId, searchParams) {
-  let query = searchParams.toString().replace(/=(?=&|$)/gm, "");
+function getReleasesByArtistId(artistId, searchArgs) {
+  let query = new URLSearchParams(searchArgs).toString();
   return fetch(BASE_URL + "artists/" + artistId + "/releases?" + query, {
     method: "GET",
   }).then((res) => {
@@ -72,35 +49,31 @@ function getReleasesByArtistId(artistId, searchParams) {
   });
 }
 
-// set parameters with searchParams.set, e.g:
-// searchParams.set("query", "leppard");
-// searchParams.set("type", "release");
-// searchParams.set("genre", "rock");
-// searchParams.set("per_page", 6);
+// all parameters optional (incl. query), in one object:
+// searchArgs = {
+// query: ""
+// type: "release" || "master" || "artist" || "label"
+// title: ""
+// release_title: ""
+// artist: ""
+// label: ""
+// genre: ""
+// style: ""
+// country: ""
+// year: ""
+// format: ""
+// track: ""
+// page: Number || 1,
+// per_page: Number || 50, (100 max)
 //
-// all parameters optional (incl. query):
-// query: (string)
-// type: 'release' || 'master' || 'artist' || 'label', (string);
-// title: (string)
-// release_title: (string)
-// artist: (string)
-// label: (string)
-// genre: (string)
-// style: (string)
-// country: (string)
-// year: (string)
-// format: (string)
-// track: (string)
-// page: (string)
-// per_page: (string)
-//
+// }
 // results returned in this format:
 // {
 //  pagination: {pagination data},
 //  results: [{result1}, {result2}, {...}]
 // }
-function searchDatabase(searchParams) {
-  let query = searchParams.toString().replace(/=(?=&|$)/gm, "");
+function searchDatabase(searchArgs) {
+  let query = new URLSearchParams(searchArgs).toString();
   return fetch(BASE_URL + "search/database?" + query, {
     method: "GET",
   }).then((res) => {
@@ -136,8 +109,14 @@ export default exports;
 // }
 // run();
 
+// let searchArgs = {
+//   sort: "year",
+//   sort_order: "desc",
+//   page: 1,
+//   per_page: 6,
+// };
 // async function run() {
-//   const result = await getReleasesByArtistId(140140, searchParams);
+//   const result = await getReleasesByArtistId(140140, searchArgs);
 //   //   console.log("this is the result: ", result);
 //   console.log(
 //     "album titles by this artist: ",
@@ -148,12 +127,14 @@ export default exports;
 // }
 // run();
 
+// let searchArgs = {
+//   query: "leppard",
+//   type: "release",
+//   genre: "rock",
+//   per_page: 2,
+// };
 // async function run() {
-//   searchParams.set("query", "leppard");
-//   searchParams.set("type", "release");
-//   searchParams.set("genre", "rock");
-//   searchParams.set("per_page", 6);
-//   const result = await searchDatabase(searchParams);
+//   const result = await searchDatabase(searchArgs);
 //   //   console.log("this is the result: ", result);
 //   console.log(
 //     "search results (titles): ",
