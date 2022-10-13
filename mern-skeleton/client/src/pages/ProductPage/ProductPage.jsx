@@ -44,7 +44,7 @@ function ProductPage() {
                 <h3>{result.labels.map((label) => (label.name))}</h3>
                 {open ? <p className='open'>{result.notes}</p> : <p className='closed'>{result.notes}</p>}                
             </div>    
-            <Tracklist />
+            <Tracklist tracklist={result.tracklist} />
             <ImageViewer />
             <Listings />
         </div>
