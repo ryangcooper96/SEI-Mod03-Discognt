@@ -1,6 +1,6 @@
-const BASE_URL = "http://localhost:3001/api/discogs/";
+const BASE_URL = "http://localhost:3000/api/discogs/";
 
-// takes the album id, returns album object
+// required parameter: album id (number), returns album object
 function getAlbumById(albumId) {
   return fetch(BASE_URL + "releases/" + albumId, {
     method: "GET",
@@ -10,27 +10,38 @@ function getAlbumById(albumId) {
   });
 }
 
-// takes the artist id, returns artist object
+// required parameter: artist id (number), returns artist object
 function getArtistById(artistId) {
   return fetch(BASE_URL + "artists/" + artistId, {
-    method: "GET",
+    // method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      "Clear-Site-Data": "*",
+    },
   }).then((res) => {
     if (res.ok) return res.json();
     throw new Error("Artist not found.");
   });
 }
 
-// takes the artist id,
-// returns first page of 50 hits in this format:
+// required parameter: artist id (number)
 //
-// {
-//  pagination: {pagination data plus URLs to previous and next pages of 50 hits},
-//  releases: [{album1}, {album2}, {...}]
+// optional parameters (in one object):
+// searchArgs = {
+// sort: "year" || "title" || "format"
+// sort_order: "asc" || "desc"
+// page: Number || 1,
+// per_page: Number || 50, (100 max)
 // }
 //
-// releases have 2 types, master and release, their data structure is slightly different.
-function getReleasesByArtistId(artistId) {
-  return fetch(BASE_URL + "artists/" + artistId + "/releases", {
+// results returned in this format:
+// {
+//  pagination: {pagination data},
+//  releases: [{album1}, {album2}, {...}]
+// }
+function getReleasesByArtistId(artistId, searchArgs) {
+  let query = new URLSearchParams(searchArgs).toString();
+  return fetch(BASE_URL + "artists/" + artistId + "/releases?" + query, {
     method: "GET",
   }).then((res) => {
     if (res.ok) return res.json();
@@ -38,23 +49,36 @@ function getReleasesByArtistId(artistId) {
   });
 }
 
-// takes search query string, empty string returns the first 50 artists it finds in the database
-function searchForArtists(query) {
-  return fetch(BASE_URL + "search/artists/?query=" + query, {
+// all parameters optional (incl. query), in one object:
+// searchArgs = {
+// query: ""
+// type: "release" || "master" || "artist" || "label"
+// title: ""
+// release_title: ""
+// artist: ""
+// label: ""
+// genre: ""
+// style: ""
+// country: ""
+// year: ""
+// format: ""
+// track: ""
+// page: Number || 1,
+// per_page: Number || 50, (100 max)
+//
+// }
+// results returned in this format:
+// {
+//  pagination: {pagination data},
+//  results: [{result1}, {result2}, {...}]
+// }
+function searchDatabase(searchArgs) {
+  let query = new URLSearchParams(searchArgs).toString();
+  return fetch(BASE_URL + "search/database?" + query, {
     method: "GET",
   }).then((res) => {
     if (res.ok) return res.json();
-    throw new Error("Artist not found.");
-  });
-}
-
-// takes search query string, empty string returns the first 50 albums it finds in the database
-function searchForReleases(query) {
-  return fetch(BASE_URL + "search/releases/?query=" + query, {
-    method: "GET",
-  }).then((res) => {
-    if (res.ok) return res.json();
-    throw new Error("Albums not found.");
+    throw new Error("Not found.");
   });
 }
 
@@ -62,24 +86,61 @@ const exports = {
   getAlbumById,
   getArtistById,
   getReleasesByArtistId,
-  searchForArtists,
-  searchForReleases,
+  searchDatabase,
 };
 
 export default exports;
 
-/* :----------------------------------------------- to test in terminal:----------------------------------------------- */
-// copypaste one of these in place of the <paste function here>:
-// getAlbumById(5073915) || getArtistById(140140) || getReleasesByArtistId(140140) || searchForArtists("oasis") || searchForReleases("definitely maybe")
-// in terminal cd into the folder of this file
-// and run: node discogsService.js
-// test code:
+/* :----------------------------------------------- test code ----------------------------------------------- */
 
 // async function run() {
+//   const result = await getAlbumById(5073915);
+//   //   console.log("this is the result: ", result);
+//   console.log("album title: ", result.title);
+//   console.log("album object keys: ", Object.keys(result));
+// }
+// run();
+
+// async function run() {
+//   const result = await getArtistById(140140);
+//   //   console.log("this is the result: ", result);
+//   console.log("artist's name: ", result.name);
+//   console.log("artist object's keys: ", Object.keys(result));
+// }
+// run();
+
+// let searchArgs = {
+//   sort: "year",
+//   sort_order: "desc",
+//   page: 1,
+//   per_page: 6,
+// };
+// async function run() {
+//   const result = await getReleasesByArtistId(140140, searchArgs);
+//   //   console.log("this is the result: ", result);
 //   console.log(
-//     "this is the response: ",
-//     await <paste function here>
+//     "album titles by this artist: ",
+//     result.releases.map((item) => {
+//       return item.year;
+//     })
 //   );
 // }
+// run();
 
+// let searchArgs = {
+//   query: "leppard",
+//   type: "release",
+//   genre: "rock",
+//   per_page: 2,
+// };
+// async function run() {
+//   const result = await searchDatabase(searchArgs);
+//   //   console.log("this is the result: ", result);
+//   console.log(
+//     "search results (titles): ",
+//     result.results.map((item) => {
+//       return item.title;
+//     })
+//   );
+// }
 // run();

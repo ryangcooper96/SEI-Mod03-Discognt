@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import "./Tracklist.css"
 
-function Tracklist() {
+function Tracklist({ tracklist }) {
 
     const [open, setOpen] = useState(false);
 
@@ -24,56 +24,13 @@ function Tracklist() {
             </tr>
         </thead>
         <tbody>
+            {tracklist.map((track) => (
             <tr>
-                <td>#</td>
-                <td>Song</td>
-                <td className='duration'>0:00</td>
+                <td>{track.position}</td>
+                <td>{track.title}</td>
+                <td>{track.duration}</td>
             </tr>
-            <tr>
-                <td>#</td>
-                <td>Song</td>
-                <td className='duration'>0:00</td>
-            </tr>
-            <tr>
-                <td>#</td>
-                <td>Song</td>
-                <td className='duration'>0:00</td>
-            </tr>
-            <tr>
-                <td>#</td>
-                <td>Song</td>
-                <td className='duration'>0:00</td>
-            </tr>
-            <tr>
-                <td>#</td>
-                <td>Song</td>
-                <td className='duration'>0:00</td>
-            </tr>
-            <tr>
-                <td>#</td>
-                <td>Song</td>
-                <td className='duration'>0:00</td>
-            </tr>
-            <tr>
-                <td>#</td>
-                <td>Song</td>
-                <td className='duration'>0:00</td>
-            </tr>
-            <tr>
-                <td>#</td>
-                <td>Song</td>
-                <td className='duration'>0:00</td>
-            </tr>
-            <tr>
-                <td>#</td>
-                <td>Song</td>
-                <td className='duration'>0:00</td>
-            </tr>
-            <tr>
-                <td>#</td>
-                <td>Song</td>
-                <td className='duration'>0:00</td>
-            </tr>
+            ))}
         </tbody>
     </table>
     </div>

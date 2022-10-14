@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
+
+import discogs from "../../utils/discogsService"
 
 import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs'
 import ImageViewer from '../../components/ImageViewer/ImageViewer'
@@ -11,28 +13,44 @@ function ProductPage() {
 
     const navigate = useNavigate()
     const [open, setOpen] = useState(false);
+    const [result, setResult] = useState({})
 
-  return (
-    <div className='ProductPage'>
-        <div className='ProductPage-pageControl'>
-            <span className="material-symbols-outlined" onClick={() => (navigate(-1))}>arrow_back</span>
-            {/* <BreadCrumbs /> */}
-            <div className='ProductPage-favourite'><span className="material-symbols-outlined">favorite</span></div>
-        </div>
-            <div className='ProductPage-productContainer'>
-            <div className='ProductPage-productInfo' onClick={() => (setOpen(!open))}>
-                <h1>Product Title</h1>
-                <h2>Artist</h2>
-                <h3>Release Date: 1996</h3>
-                <h3>Record Label</h3>
-                {open ? <p className='open'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum architecto obcaecati perspiciatis maxime velit omnis! Neque, accusantium porro, voluptatem accusamus dolorum doloremque repellat iure laborum nisi exercitationem quo fugiat adipisci.</p> : <p className='closed'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum architecto obcaecati perspiciatis maxime velit omnis! Neque, accusantium porro, voluptatem accusamus dolorum doloremque repellat iure laborum nisi exercitationem quo fugiat adipisci.</p>}                
-            </div>    
-            <Tracklist />
-            <ImageViewer />
-            <Listings />
-        </div>
-    </div>
-  )
+    const { id } = useParams();
+
+    useEffect(() => {
+        async function getResult() {
+            console.log(id)
+            const data = await discogs.getAlbumById(id) 
+            console.log(data)
+            setResult({...data})
+        }
+        getResult()
+    }, [])    
+    
+    return (
+      <div className='ProductPage'>
+          <div className='ProductPage-pageControl'>
+              <span className="material-symbols-outlined" onClick={() => (navigate(-1))}>arrow_back</span>
+              {/* <BreadCrumbs /> */}
+              <div className='ProductPage-favourite'><span className="material-symbols-outlined">favorite</span></div>
+          </div>
+          {result ? (
+          <div className='ProductPage-productContainer'>
+              <div className='ProductPage-productInfo' onClick={() => (setOpen(!open))}>
+                  <h1>{result.title}</h1>
+                  {/* <h2>{result.artists.map((artist) => (artist.name))}</h2> */}
+                  <h3>{result.released_formatted}</h3>
+                  {/* <h3>{result.labels.map((label) => (label.name))}</h3> */}
+                  {open ? <p className='open'>{result.notes}</p> : <p className='closed'>{result.notes}</p>}                
+              </div>    
+              <Tracklist tracklist={result.tracklist} />
+              {/* <ImageViewer images={result.images}/> */}
+              <Listings />
+          </div>
+          ) : <></>}
+      </div>
+    )
+
 }
 
 export default ProductPage

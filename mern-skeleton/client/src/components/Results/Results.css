@@ -21,6 +21,61 @@
     align-items: flex-start;
 }
 
+.Results-pagination {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.Results-pagination button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50vmax;
+    outline: none;
+    border: none;
+    /* border: 2px solid rgb(50,50,50); */
+    font-weight: 800;
+    margin: 5px;
+}
+
+.Results-pagination button.outside.active:hover,
+.Results-pagination button.inside.active:hover,
+.Results-pagination button.centre.active:hover {
+    color: white;
+    background: rgb(50,50,50);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.Results-pagination button.outside {
+    color: rgb(100,100,100);
+    background: rgb(230, 230, 230);
+    font-size: 15px;
+    height: 25px;
+    width: 25px;
+    transition: 0.5s;
+}
+.Results-pagination button.inside {
+    background: rgb(215, 215, 215);
+    color: rgb(75,75,75);
+    font-size: 18px;
+    height: 30px;
+    width: 30px;
+    transition: 0.5s;
+}
+.Results-pagination button.centre {
+    background: rgb(200,200,200);
+    color: rgb(50,50,50);
+    font-size: 24px;
+    height: 40px;
+    width: 40px;
+    transition: 0.5s;
+}
+
 /* Mobile */
 @media screen and (min-width: 320px) and (max-width: 480px) {
     .Results-list {
