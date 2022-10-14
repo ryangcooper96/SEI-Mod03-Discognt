@@ -26,7 +26,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     box-sizing: border-box;
 }
 
@@ -38,34 +38,47 @@
     outline: none;
     border: none;
     /* border: 2px solid rgb(50,50,50); */
-    font-weight: 800;
+    font-weight: 600;
     margin: 5px;
 }
 
-.Results-pagination button.outside.active:hover,
-.Results-pagination button.inside.active:hover,
+.Results-pagination button.third.active:hover,
+.Results-pagination button.second.active:hover,
+.Results-pagination button.first.active:hover,
 .Results-pagination button.centre.active:hover {
     color: white;
     background: rgb(50,50,50);
-    transform: scale(1.1);
+    transform: scale(1.2);
     transition: 0.5s;
+    border: 2px solid whitesmoke;
 }
 
-.Results-pagination button.outside {
+.Results-pagination button.third {
+    color: rgb(125,125,125);
+    background: rgb(240, 240, 240);
+    font-size: 12px;
+    height: 20px;
+    width: 20px;
+    border: 1.75px solid rgb(125,125,125);
+    transition: 0.5s;
+}
+.Results-pagination button.second {
     color: rgb(100,100,100);
     background: rgb(230, 230, 230);
     font-size: 15px;
     height: 25px;
     width: 25px;
     transition: 0.5s;
+    border: 2px solid rgb(100,100,100);
 }
-.Results-pagination button.inside {
+.Results-pagination button.first {
     background: rgb(215, 215, 215);
     color: rgb(75,75,75);
     font-size: 18px;
     height: 30px;
     width: 30px;
     transition: 0.5s;
+    border: 2px solid rgb(75,75,75);
 }
 .Results-pagination button.centre {
     background: rgb(200,200,200);
@@ -74,39 +87,40 @@
     height: 40px;
     width: 40px;
     transition: 0.5s;
+    border: 3px solid rgb(50,50,50);
 }
 
 /* Mobile */
 @media screen and (min-width: 320px) and (max-width: 480px) {
     .Results-list {
-        padding: 5%;
+        padding: 0 5%;
     }
 }
 
 /* Tablet */
 @media screen and (min-width: 480px) and (max-width: 768px) {
     .Results-list {
-        padding: 2%;
+        padding: 0 2%;
     }
 }
 
 /* Laptop / Small Screen */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
     .Results-list {
-        padding: 2%;
+        padding: 0 2%;
     }
 }
 
 /* Desktop / Large Screen */
 @media screen and (min-width: 1025px) and (max-width: 1200px) {
     .Results-list {
-        padding: 2%;
+        padding: 0 2%;
     }
 }
 
 /* Tv / X-Large Screen */
 @media screen and (min-width: 1221px) {
     .Results-list {
-        padding: 1%;
+        padding: 0 1%;
     }
 }

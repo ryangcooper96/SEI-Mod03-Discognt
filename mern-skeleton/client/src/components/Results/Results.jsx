@@ -59,17 +59,28 @@ function Results() {
   } else {
     return (<div className='Results'>
               <Search query={query} setQuery={setQuery} setPageNum={setPage}/>
+              {results.length ? <div className='Results-pagination'>
+                {pages.page -3 > 0 ? <button className='third active' onClick={() => (setPage((prev) => (prev - 3)))}>{pages.page - 3}</button> : <button className='third'></button>}
+                {pages.page -2 > 0 ? <button className='second active' onClick={() => (setPage((prev) => (prev - 2)))}>{pages.page - 2}</button> : <button className='second'></button>}
+                {pages.page -1 > 0 ? <button className='first active' onClick={() => (setPage((prev) => (prev - 1)))}>{pages.page - 1}</button> : <button className='first'></button>}
+                <button className='centre active'>{pages.page}</button>
+                {pages.page + 1 < pages.pages ? <button className='first active' onClick={() => (setPage((prev) => (prev + 1)))}>{pages.page + 1}</button> : <button className='first'></button>}
+                {pages.page + 2 < pages.pages ? <button className='second active' onClick={() => (setPage((prev) => (prev + 2)))}>{pages.page + 2}</button> : <button className='second'></button>}
+                {pages.page + 3 < pages.pages ? <button className='third active' onClick={() => (setPage((prev) => (prev + 3)))}>{pages.page + 3}</button> : <button className='third'></button>}
+              </div> : <></>}
               <div className='Results-list'>
                 {results.map((result) => (<ResultCard result={result} key={result.id}/>))}
-                {loading && <div>Loading</div>}
+                {loading && <div className='Results-loading'>Loading</div>}
               </div>
-              <div className='Results-pagination'>
-                {pages.page -2 > 0 ? <button className='outside active' onClick={() => (setPage((prev) => (prev - 2)))}>{pages.page - 2}</button> : <button className='outside'></button>}
-                {pages.page -1 > 0 ? <button className='inside active' onClick={() => (setPage((prev) => (prev - 1)))}>{pages.page - 1}</button> : <button className='inside'></button>}
+              {results.length ? <div className='Results-pagination'>
+                {pages.page -3 > 0 ? <button className='third active' onClick={() => (setPage((prev) => (prev - 3)))}>{pages.page - 3}</button> : <button className='third'></button>}
+                {pages.page -2 > 0 ? <button className='second active' onClick={() => (setPage((prev) => (prev - 2)))}>{pages.page - 2}</button> : <button className='second'></button>}
+                {pages.page -1 > 0 ? <button className='first active' onClick={() => (setPage((prev) => (prev - 1)))}>{pages.page - 1}</button> : <button className='first'></button>}
                 <button className='centre active'>{pages.page}</button>
-                {pages.page + 1 < pages.pages ? <button className='inside active' onClick={() => (setPage((prev) => (prev + 1)))}>{pages.page + 1}</button> : <button className='inside'></button>}
-                {pages.page + 2 < pages.pages ? <button className='outside active' onClick={() => (setPage((prev) => (prev + 2)))}>{pages.page + 2}</button> : <button className='outside'></button>}
-              </div>
+                {pages.page + 1 < pages.pages ? <button className='first active' onClick={() => (setPage((prev) => (prev + 1)))}>{pages.page + 1}</button> : <button className='first'></button>}
+                {pages.page + 2 < pages.pages ? <button className='second active' onClick={() => (setPage((prev) => (prev + 2)))}>{pages.page + 2}</button> : <button className='second'></button>}
+                {pages.page + 3 < pages.pages ? <button className='third active' onClick={() => (setPage((prev) => (prev + 3)))}>{pages.page + 3}</button> : <button className='third'></button>}
+              </div> : <></>}
             </div>);
   }
 
