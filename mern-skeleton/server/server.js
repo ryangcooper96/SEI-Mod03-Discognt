@@ -9,13 +9,14 @@ import dotenv from "dotenv";
 
 import discogRoutes from "./routes/api/discogs.js";
 import userRoutes from "./routes/api/users.js";
+import stripeRoutes from "./routes/api/stripe.js";
 import auth from "./config/auth.js";
 
 import { connectToDb } from "./config/database.js";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-
 dotenv.config();
+
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use(express.static(join(__dirname, "..", "client", "build")));
 // Put API routes here, before the "catch all" route
 app.use("/api/users", userRoutes);
 app.use("/api/discogs", discogRoutes);
+app.use("/api/stripe", stripeRoutes)
 
 // The following "catch all" route (note the *)is necessary
 // for a SPA's client-side routing to properly work
