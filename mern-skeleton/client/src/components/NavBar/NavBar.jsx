@@ -11,7 +11,7 @@ const NavBar = () => {
       <span className='NavBar-logo'>Discogn't</span> 
       <div>
         <div>
-          <NavLink to='/protected' className='NavBar-link'>Protected Route</NavLink>
+          <NavLink to='/dashboard' className='NavBar-link'>Dashboard</NavLink>
           &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
           <NavLink to='/artists' className='NavBar-link'>ARTISTS</NavLink>
           &nbsp;&nbsp;|&nbsp;&nbsp;
