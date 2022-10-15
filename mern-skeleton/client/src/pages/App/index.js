@@ -16,6 +16,7 @@ import Checkout from "../Checkout/Checkout";
 
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import Basket from "../Basket/Basket";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -44,6 +45,8 @@ function App() {
             <Route exact path="/artists" element={<ArtistsPage />} />
             <Route exact path="/marketplace" element={<Marketplace />} />
             <Route exact path="/marketplace/:id" element={<ProductPage />} />
+            <Route exact path="/basket" element={<Basket />} />
+            <Route exact path="/checkout" element={<Checkout />} />
             <Route exact path="/signup" element={<SignupPage />} />
             <Route exact path="/login" element={<LoginPage />} />
             <Route exact path="/checkout" element={<Checkout />} />
