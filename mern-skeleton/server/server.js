@@ -8,6 +8,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import discogRoutes from "./routes/api/discogs.js";
+import listingRoutes from "./routes/api/listings.js";
 import userRoutes from "./routes/api/users.js";
 import auth from "./config/auth.js";
 
@@ -29,8 +30,9 @@ app.use(favicon(join(__dirname, "..", "client", "build", "favicon.ico")));
 app.use(express.static(join(__dirname, "..", "client", "build")));
 
 // Put API routes here, before the "catch all" route
-app.use("/api/users", userRoutes);
 app.use("/api/discogs", discogRoutes);
+app.use("/api/listings", listingRoutes);
+app.use("/api/users", userRoutes);
 
 // The following "catch all" route (note the *)is necessary
 // for a SPA's client-side routing to properly work

@@ -8,13 +8,8 @@ const userSchema = new mongoose.Schema(
     name: String,
     email: { type: String, required: true, lowercase: true, unique: true },
     password: String,
-    wishlist: [], // [{Schema}]
-    basket: [], // [{Schema}]
-    order: [], // [{Schema}]
-    // seller_data:
-    // collection: {Schema},
-    // rating: Number,
-    // number_of_ratings: Number,
+    wishlist: [String], // albumIDs from Discog,
+    collectionlist: { type: mongoose.Schema.ObjectId, ref: "Collection" },
   },
   {
     timestamps: true,
