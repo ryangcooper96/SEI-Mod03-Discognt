@@ -7,9 +7,15 @@ function Listings() {
     <div className='Listings'>
         <h2>Listings</h2>
         <div className='Listings-container'>
-            <ListingCard />        
-            <ListingCard />        
-            <ListingCard />        
+          <button className='Listings-button'>
+            <span>Create Listing</span>
+            <span className="material-symbols-outlined">
+              album
+            </span>
+          </button>
+          <ListingCard />        
+          <ListingCard />        
+          <ListingCard />        
         </div>
     </div>
   )

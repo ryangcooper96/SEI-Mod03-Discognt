@@ -1,5 +1,4 @@
 import FeaturedAlbums from "../../components/FeaturedAlbums/FeaturedAlbums";
-import Search from "../../components/Search/Search";
 
 import "./HomePage.css";
 
@@ -8,7 +7,6 @@ export default function HomePage() {
     <div className="Home">
       <div className="Home-heroWrapper">
         <div>
-          {/* <Search /> */}
           <FeaturedAlbums />
         </div>
       </div>

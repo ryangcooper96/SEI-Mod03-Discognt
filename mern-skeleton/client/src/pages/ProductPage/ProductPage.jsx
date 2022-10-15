@@ -43,11 +43,11 @@ function ProductPage() {
                   <h3>{result.released_formatted ? result.released_formatted : result.year} </h3>
                   {console.log(result.labels)}
                   {/* <h3>{result.labels.map((label) => (label.name))}</h3> */}
-                  <h3>{result.labels[0].name ? result.labels[0].name : null}</h3>
+                  {/* <h3>{result.labels[0].name ? result.labels[0].name : null}</h3> */}
                   {open ? <p className='open'>{result.notes}</p> : <p className='closed'>{result.notes}</p>}                
               </div>    
               <Tracklist tracklist={result.tracklist} />
-              <ImageViewer images={result.images}/>
+              {/* <ImageViewer images={result.images}/> */}
               <Listings releaseId={result.id}/>
           </div>
           ) : <></>}
