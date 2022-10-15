@@ -13,7 +13,7 @@ export async function createListing(req, res) {
 export async function getListingsByCollection(req, res) {
   try {
     const listings = await Listing.find({
-      collectionlist: req.body.collectionlist,
+      collectionlist: req.params.id,
     }).sort("title");
     //   .populate("collectionlist");
     res.json(listings);
@@ -26,7 +26,7 @@ export async function getListingsByCollection(req, res) {
 export async function getListingsByAlbumId(req, res) {
   try {
     const listings = await Listing.find({
-      albumId: req.body.albumId,
+      albumId: req.params.id,
     }).sort("price");
     //   .populate("collectionlist");
     res.json(listings);
@@ -35,8 +35,7 @@ export async function getListingsByAlbumId(req, res) {
   }
 }
 
-// works, despite some error message in
-export async function getListingById(req, res, next) {
+export async function getListingById(req, res) {
   try {
     const listing = await Listing.findById(req.params.id);
     //   .populate("collectionlist")
@@ -46,7 +45,6 @@ export async function getListingById(req, res, next) {
         error: "Listing not found",
       });
     res.json(listing);
-    next();
   } catch (err) {
     return res.status(400).json({
       error: "Could not retrieve listing",
