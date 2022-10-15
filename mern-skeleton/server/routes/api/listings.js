@@ -6,10 +6,10 @@ const listingRoutes = express.Router();
 listingRoutes.route("/new").post(listingController.createListing);
 
 listingRoutes
-  .route("/collection")
+  .route("/collection/:id")
   .get(listingController.getListingsByCollection);
 
-listingRoutes.route("/album").get(listingController.getListingsByAlbumId);
+listingRoutes.route("/album/:id").get(listingController.getListingsByAlbumId);
 
 listingRoutes
   .route("/:id")

@@ -3,7 +3,8 @@ import db from "../helpers/discogs.js";
 export async function getAlbumById(req, res, next) {
   try {
     const { id } = req.params;
-    const album = await db.getRelease(id);
+    // const album = await db.getRelease(id);
+    const album = await db.getMaster(id);
     if (album) {
       res.json(album);
       // console.log("album title: ", album.title);
@@ -32,36 +33,36 @@ export async function getArtistById(req, res, next) {
   }
 }
 
-export async function getReleasesByArtistId(req, res, next) {
-  try {
-    const { id } = req.params;
-    const {
-      sort = "year",
-      sort_order = "asc",
-      page = 1,
-      per_page = 50,
-    } = req.query;
-    const releases = await db.getArtistReleases(id, {
-      sort,
-      sort_order,
-      page,
-      per_page,
-    });
-    if (releases) {
-      res.json(releases);
-      // console.log(
-      //   "albums titles: ",
-      //   releases.releases.map((item) => {
-      //     return item.title;
-      //   })
-      // );
-    } else {
-      res.json({ error: true, message: "Albums not found." });
-    }
-  } catch (error) {
-    next(error);
-  }
-}
+// export async function getReleasesByArtistId(req, res, next) {
+//   try {
+//     const { id } = req.params;
+//     const {
+//       sort = "year",
+//       sort_order = "asc",
+//       page = 1,
+//       per_page = 50,
+//     } = req.query;
+//     const releases = await db.getArtistReleases(id, {
+//       sort,
+//       sort_order,
+//       page,
+//       per_page,
+//     });
+//     if (releases) {
+//       res.json(releases);
+//       // console.log(
+//       //   "albums titles: ",
+//       //   releases.releases.map((item) => {
+//       //     return item.title;
+//       //   })
+//       // );
+//     } else {
+//       res.json({ error: true, message: "Albums not found." });
+//     }
+//   } catch (error) {
+//     next(error);
+//   }
+// }
 
 export async function searchDatabase(req, res, next) {
   try {
