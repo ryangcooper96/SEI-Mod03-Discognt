@@ -26,7 +26,7 @@
 }
 
 .SearchBar input::placeholder {
-    color: rgb(90,90,90);
+    color: rgb(75,75,75);
 }
 
 .SearchBar button {
@@ -43,6 +43,8 @@
     background: rgb(50, 50, 50);
     color: rgb(150,150,150);
 
+    transition: 0.5s;
+
     box-sizing: border-box;
 }
 
@@ -52,6 +54,7 @@
 
 .SearchBar button:hover {
     color: whitesmoke;
+    transform: scale(1.33);
     transition: 0.5s;
 }
 

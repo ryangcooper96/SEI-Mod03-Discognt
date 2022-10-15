@@ -3,9 +3,11 @@ import "./FilterBar.css"
 
 function FilterBar() {
     const [open, setOpen] = useState(false)
-    const filters = ["Techno", "Rock", "Hip-Hop", "Pop", "Blah", "Blah Blah"]
+    const filters = ["Release", "Genre", "Artist", "Album"]
 
-    const handleClick = () => {setOpen(!open)}
+    const handleClick = () => {
+      setOpen(!open)
+    }
 
   return (
     <div className='FilterBar'>

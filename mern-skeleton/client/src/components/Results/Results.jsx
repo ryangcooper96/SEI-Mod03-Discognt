@@ -70,7 +70,7 @@ function Results() {
               </div> : <></>}
               <div className='Results-list'>
                 {results.map((result) => (<ResultCard result={result} key={result.id}/>))}
-                {loading && <div className='Results-loading'>Loading</div>}
+                {/* {loading && <div className='Results-loading'>Loading</div>} */}
               </div>
               {results.length ? <div className='Results-pagination'>
                 {pages.page -3 > 0 ? <button className='third active' onClick={() => (setPage((prev) => (prev - 3)))}>{pages.page - 3}</button> : <button className='third'></button>}

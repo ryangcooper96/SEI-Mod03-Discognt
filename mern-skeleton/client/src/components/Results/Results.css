@@ -40,6 +40,8 @@
     /* border: 2px solid rgb(50,50,50); */
     font-weight: 600;
     margin: 5px;
+    color: white;
+    background: rgb(50,50,50);
 }
 
 .Results-pagination button.third.active:hover,
@@ -53,42 +55,53 @@
     border: 2px solid whitesmoke;
 }
 
+.Results-pagination button.third.active:active,
+.Results-pagination button.second.active:active,
+.Results-pagination button.first.active:active,
+.Results-pagination button.centre.active:active {
+    transform: scale(0.9);
+    transition: 0.5s;
+}
+
+
+
 .Results-pagination button.third {
-    color: rgb(125,125,125);
-    background: rgb(240, 240, 240);
+    /* color: rgb(125,125,125);
+    background: rgb(240, 240, 240); */
     font-size: 12px;
     height: 20px;
     width: 20px;
-    border: 1.75px solid rgb(125,125,125);
+    border: 1.75px solid rgb(175,175,175);
     transition: 0.5s;
 }
 .Results-pagination button.second {
-    color: rgb(100,100,100);
-    background: rgb(230, 230, 230);
+    /* color: rgb(100,100,100);
+    background: rgb(230, 230, 230); */
     font-size: 15px;
     height: 25px;
     width: 25px;
     transition: 0.5s;
-    border: 2px solid rgb(100,100,100);
+    border: 2px solid rgb(150,150,150);
 }
 .Results-pagination button.first {
-    background: rgb(215, 215, 215);
-    color: rgb(75,75,75);
+    /* background: rgb(215, 215, 215);
+    color: rgb(75,75,75); */
     font-size: 18px;
     height: 30px;
     width: 30px;
     transition: 0.5s;
-    border: 2px solid rgb(75,75,75);
+    border: 2px solid rgb(110,110,110);
 }
 .Results-pagination button.centre {
-    background: rgb(200,200,200);
-    color: rgb(50,50,50);
+    /* background: rgb(200,200,200);
+    color: rgb(50,50,50); */
     font-size: 24px;
     height: 40px;
     width: 40px;
     transition: 0.5s;
-    border: 3px solid rgb(50,50,50);
+    border: 3px solid rgb(75,75,75);
 }
+
 
 /* Mobile */
 @media screen and (min-width: 320px) and (max-width: 480px) {
