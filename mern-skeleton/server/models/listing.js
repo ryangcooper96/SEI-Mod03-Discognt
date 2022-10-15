@@ -8,7 +8,7 @@ const listingSchema = new mongoose.Schema(
     condition: String,
     price: Number,
     description: String,
-    collection: { type: mongoose.Schema.ObjectId, ref: "Collection" },
+    collectionlist: { type: mongoose.Schema.ObjectId, ref: "Collection" },
   },
   {
     timestamps: true,

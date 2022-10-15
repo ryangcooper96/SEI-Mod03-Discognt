@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema(
     email: { type: String, required: true, lowercase: true, unique: true },
     password: String,
     wishlist: [String], // albumIDs from Discog,
+    collectionlist: { type: mongoose.Schema.ObjectId, ref: "Collection" },
   },
   {
     timestamps: true,
