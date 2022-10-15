@@ -11,6 +11,7 @@ import Footer from "../../components/Footer/Footer";
 import Marketplace from "../Marketplace/Marketplace";
 import Dashboard from "../Dashboard/Dashboard";
 import ProductPage from "../ProductPage/ProductPage";
+import ArtistsPage from "../ArtistsPage/ArtistsPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <div className="page-wrapper">
         <Routes>
           <Route exact path="/" element={<HomePage />} />
+          <Route exact path="/artists" element={<ArtistsPage />} />
           <Route exact path="/marketplace" element={<Marketplace />} />
           <Route exact path="/marketplace/:id" element={<ProductPage />} />
           <Route exact path="/signup" element={<SignupPage />} />

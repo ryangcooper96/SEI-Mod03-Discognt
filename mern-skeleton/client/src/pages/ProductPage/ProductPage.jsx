@@ -25,7 +25,7 @@ function ProductPage() {
             setResult({...data})
         }
         getResult()
-    }, [])    
+    })    
     
     return (
       <div className='ProductPage'>
@@ -40,10 +40,10 @@ function ProductPage() {
                   <h1>{result.title}</h1>
                   {console.log(result.artists)}
                   <h2>{result.artists_sort}</h2>
-                  <h3>{result.released_formatted}</h3>
+                  <h3>{result.released_formatted ? result.released_formatted : result.year} </h3>
                   {console.log(result.labels)}
                   {/* <h3>{result.labels.map((label) => (label.name))}</h3> */}
-                  <h3>{result.labels[0].name}</h3>
+                  <h3>{result.labels[0].name ? result.labels[0].name : null}</h3>
                   {open ? <p className='open'>{result.notes}</p> : <p className='closed'>{result.notes}</p>}                
               </div>    
               <Tracklist tracklist={result.tracklist} />

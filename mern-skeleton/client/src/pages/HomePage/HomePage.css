@@ -1,8 +1,18 @@
-.home-wrapper {
+.Home {
     display: flex;
     flex-direction: column;
-    justify-content: top;
+    justify-content: flex-start;
     align-items: center;
+
     min-height: 100vh;
-    margin-top: 10px;
+    /* margin-top: 30px; */
+    padding: 5vh 10vw;
+}
+
+.Home-heroWrapper {
+
+}
+
+.Home-welcome {
+    width: 100%;
 }

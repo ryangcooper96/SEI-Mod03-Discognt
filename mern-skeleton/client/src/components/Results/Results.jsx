@@ -6,7 +6,7 @@ import discogs from "../../utils/discogsService"
 import { useState, useEffect, useRef } from 'react'
 import { useCallback } from 'react'
 
-function Results() {
+function Results({type, location}) {
 
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(false)
@@ -22,7 +22,7 @@ function Results() {
 
     async function getResults() {
       await discogs.searchDatabase({
-        type: "master",
+        type: type,
         query: query,
         page: page,
         per_page: 20,
@@ -69,7 +69,7 @@ function Results() {
                 {pages.page + 3 < pages.pages ? <button className='third active' onClick={() => (setPage((prev) => (prev + 3)))}>{pages.page + 3}</button> : <button className='third'></button>}
               </div> : <></>}
               <div className='Results-list'>
-                {results.map((result) => (<ResultCard result={result} key={result.id}/>))}
+                {results.map((result) => (<ResultCard result={result} key={result.id} location={location}/> ))}
                 {/* {loading && <div className='Results-loading'>Loading</div>} */}
               </div>
               {results.length ? <div className='Results-pagination'>
