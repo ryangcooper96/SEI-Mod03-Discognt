@@ -32,8 +32,11 @@ function ListingCard() {
             <button className='ListingCard-button'>
                 <span>Add to Basket</span>
                 <span className="material-symbols-outlined">
-                    shopping_basket
+                    add_shopping_cart
                 </span>
+                {/* <span className="material-symbols-outlined">
+                    remove_shopping_cart
+                </span> */}
             </button>
     </div>
   )
