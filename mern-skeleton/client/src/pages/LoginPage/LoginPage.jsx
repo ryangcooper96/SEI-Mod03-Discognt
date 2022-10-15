@@ -10,7 +10,7 @@ function LoginPage() {
 
   const [formState, setFormState] = React.useState({
     email: '',
-    pw: ''
+    password: ''
   });
 
   const handleChange = (e) => {
@@ -20,7 +20,6 @@ function LoginPage() {
       [e.target.name]: e.target.value
     });
   }
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -46,7 +45,7 @@ function LoginPage() {
         </div>
         <div className="form-group">
           <div className="col-sm-12">
-            <input type="password" className="form-control" placeholder="Password" value={formState.pw} name="pw" onChange={handleChange} />
+            <input type="password" className="form-control" placeholder="Password" value={formState.password} name="password" onChange={handleChange} />
           </div>
         </div>
         <div className="form-group">
