@@ -13,7 +13,7 @@ function Marketplace() {
             <p>Find exactly what you're looking for in our marketplace... </p>
         </div>
         {/* <BreadCrumbs /> */}
-        <Results />
+        <Results type={"master"} location={"marketplace"}/>
     </div>
   )
 }

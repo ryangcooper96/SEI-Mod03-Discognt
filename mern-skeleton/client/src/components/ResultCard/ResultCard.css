@@ -59,6 +59,7 @@
 }
 
 .ResultCard-image img {
+    min-height: 100px;
     height: auto;
     width: 100%;
     object-fit: cover;
@@ -83,6 +84,10 @@
     font-size: 15px;
     font-weight: 300;
     color: rgb(100,100,100);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 /* Mobile */
