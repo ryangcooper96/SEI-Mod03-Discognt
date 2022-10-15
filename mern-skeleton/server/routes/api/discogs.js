@@ -7,9 +7,9 @@ discogRoutes.route("/releases/:id").get(discogController.getAlbumById);
 
 discogRoutes.route("/artists/:id").get(discogController.getArtistById);
 
-discogRoutes
-  .route("/artists/:id/releases")
-  .get(discogController.getReleasesByArtistId);
+// discogRoutes
+//   .route("/artists/:id/releases")
+//   .get(discogController.getReleasesByArtistId);
 
 discogRoutes.route("/search/database").get(discogController.searchDatabase);
 

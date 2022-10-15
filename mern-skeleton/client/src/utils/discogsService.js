@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/api/discogs/";
+const BASE_URL = "http://localhost:3001/api/discogs/";
 
 // required parameter: album id (number), returns album object
 function getAlbumById(albumId) {
@@ -39,15 +39,15 @@ function getArtistById(artistId) {
 //  pagination: {pagination data},
 //  releases: [{album1}, {album2}, {...}]
 // }
-function getReleasesByArtistId(artistId, searchArgs) {
-  let query = new URLSearchParams(searchArgs).toString();
-  return fetch(BASE_URL + "artists/" + artistId + "/releases?" + query, {
-    method: "GET",
-  }).then((res) => {
-    if (res.ok) return res.json();
-    throw new Error("Artist's albums not found.");
-  });
-}
+// function getReleasesByArtistId(artistId, searchArgs) {
+//   let query = new URLSearchParams(searchArgs).toString();
+//   return fetch(BASE_URL + "artists/" + artistId + "/releases?" + query, {
+//     method: "GET",
+//   }).then((res) => {
+//     if (res.ok) return res.json();
+//     throw new Error("Artist's albums not found.");
+//   });
+// }
 
 // all parameters optional (incl. query), in one object:
 // searchArgs = {
@@ -85,7 +85,7 @@ function searchDatabase(searchArgs) {
 const exports = {
   getAlbumById,
   getArtistById,
-  getReleasesByArtistId,
+  // getReleasesByArtistId,
   searchDatabase,
 };
 
