@@ -1,0 +1,16 @@
+.stripe-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.stripeForm {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+#stripeSubmit {
+    margin: 10px;
+    width: 80px;
+}

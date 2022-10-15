@@ -1,9 +1,10 @@
 import React from 'react'
+import Listings from '../../../components/Listings/Listings'
 
-function Listings() {
+function ListingsPage() {
   return (
-    <div>Listings</div>
+    <div><Listings/></div>
   )
 }
 
-export default Listings
+export default ListingsPage
