@@ -1,20 +1,8 @@
-import { Express } from "express";
-import Stripe from "stripe";
-import uuidv4 from "uuid";
-const stripe = new Stripe('sk_test_51LsWKuK3m4JInnwokp2NxjstpHVwkXiaVLHkVfkhaKERM0LXZDN6rjg172wdFmkGGVMmQBv15teAgATMIix7C5bx00Ll22wHev')
+import express from 'express'
+import * as stripeCtrl from '../../controllers/stripe.js'
 
-async function createPayment(req, res, next) {
-    const { token, amount } = req.body;
-    const idempotencyKey = uuidv4();
-
-    const customer = await stripe.customers.create({ email: token.email, source: token })
-    const result = await stripe.charges.create({
-        amount: amount * 100,
-        currency: "gbp",
-        customer: customer.id,
-        receipt_email: token.email
-    }, { idempotencyKey })
-    return res.json(result)
-}
+const stripeRoutes = express.Router();
+stripeRoutes.route('/checkout', stripeCtrl.createPayment)
+stripeRoutes.route('/secret').get(stripeCtrl.shareClientSecret)
 
 export default stripeRoutes;
