@@ -6,6 +6,7 @@ import Billing from './Billing/Billing'
 import Listings from './Listings/Listings'
 import Security from './Security/Security'
 import './Dashboard.css'
+import NewListing from './Listings/NewListing/NewListing'
 
 function Dashboard() {
   return (
@@ -19,6 +20,7 @@ function Dashboard() {
       <div className='panel-wrapper'>
         <Routes>
         <Route path='/listings' element={<Listings/>}/>
+        <Route path='/listings/new/:id' element={<NewListing/>}/>
         <Route path='/security' element={<Security/>}/>
         <Route path ='/billing' element={<Billing/>}/>
         </Routes>
