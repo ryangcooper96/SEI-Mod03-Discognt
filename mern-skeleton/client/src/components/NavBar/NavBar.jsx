@@ -7,26 +7,41 @@ const NavBar = () => {
   const { handleLogout, user } = useUser()
 
   let nav = user ?
-    <>
+    <div className='NavBar'>
       <span className='NavBar-logo'>Discogn't</span> 
       <div>
-      <NavLink to='/protected' className='NavBar-link'>Protected Route</NavLink>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <NavLink to='' className='NavBar-link' onClick={handleLogout}>LOG OUT</NavLink>
-      &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-      <span className='NavBar-welcome'>WELCOME, {user.name}</span>
+        <div>
+          <NavLink to='/protected' className='NavBar-link'>Protected Route</NavLink>
+          &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          <NavLink to='/artists' className='NavBar-link'>ARTISTS</NavLink>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <NavLink to='/marketplace' className='NavBar-link'>MARKETPLACE</NavLink>
+        </div>
+        <div>
+          <NavLink to='' className='NavBar-link' onClick={handleLogout}>LOG OUT</NavLink>
+          &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          <span className='NavBar-welcome'>WELCOME, {user.name}</span>
+          &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          <NavLink to='' className='NavBar-link' ></NavLink>
+        </div>
       </div>
-    </>
+    </div>
     :
-      <>
-      <NavLink to='/' className='NavBar-link'><span className='NavBar-logo'>Discogn't</span></NavLink>
-      
+    <div className='NavBar'>
+        <NavLink to='/' className='NavBar-link'><span className='NavBar-logo'>Discogn't</span></NavLink>
       <div>
-      <NavLink to='/login' className='NavBar-link'>LOG IN</NavLink>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <NavLink to='/signup' className='NavBar-link'>SIGN UP</NavLink>
+        <NavLink to='/artists' className='NavBar-link'>ARTISTS</NavLink>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <NavLink to='/marketplace' className='NavBar-link'>MARKETPLACE</NavLink>
       </div>
-      </>
+      <div>
+        <NavLink to='/login' className='NavBar-link'>LOG IN</NavLink>
+        &nbsp;&nbsp;|&nbsp;&nbsp;
+        <NavLink to='/signup' className='NavBar-link'>SIGN UP</NavLink>
+        &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+        <NavLink to='' className='NavBar-link' ><span className="material-symbols-outlined">shopping_basket</span></NavLink>
+      </div>
+    </div>
     ;
 
   return (

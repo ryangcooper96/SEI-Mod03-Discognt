@@ -1,17 +1,26 @@
 .NavBar {
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
 
   position: fixed;
   z-index: 2;
-  height: 30px;
+  min-height: 35px;
+  max-height: 70px;
   width: 100%;
   margin: 0;
-  padding: 1vh 5vw;
+  padding: 1vh 0vw;
 
   background: rgba(50, 50, 50, 1);;
   color: whitesmoke;
+}
+
+.NavBar > div {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .NavBar-logo {
