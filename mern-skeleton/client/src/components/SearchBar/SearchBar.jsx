@@ -4,12 +4,17 @@ import "./SearchBar.css"
 function SearchBar( { query, setQuery, setPageNum } ) {
 
     const [open, setOpen] = useState(false)
-    const handleClick = () => {setOpen(!open)}
+    const handleClick = (e) => {
+      if(open){
+        setQuery('')
+      }
+      setOpen(!open)
+    }
 
     const handleChange = (e) => {
         setQuery(e.target.value)
         setPageNum(1)
-    };  
+    };
 
   return (
     <div className='SearchBar'>

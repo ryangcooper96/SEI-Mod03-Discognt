@@ -1,0 +1,71 @@
+.ArtistsPage {
+    display: flex;
+    flex-flow: column nowrap;
+    /* justify-content: flex-start;
+    align-items: flex-start; */
+
+    width: 100vw;
+    padding: 6vw 7vw;
+    box-sizing: border-box;
+}
+
+.ArtistsPage-title {
+    padding: 0vw 4vw;
+    margin-bottom: 2%;
+    width: 100%;
+    box-sizing: border-box;
+        
+    /* border: 2px solid rgba(50, 50, 50, 0.1); */
+        
+    background: whitesmoke;
+    border-radius: 17px;
+}
+
+.ArtistsPage-title h1 {
+    font-family: 'Rubik Dirt', cursive;
+    margin: 0;
+    margin-top: -20px;
+    font-size: xx-large;
+    font-weight: 400;
+}
+
+.ArtistsPage-title p {
+    margin: 2% 0 2% 0;
+    font-size: 14px;
+    font-weight: 200;
+}
+
+/* Mobile */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    .ArtistsPage {
+        padding: 12% 5%;
+    }
+}
+
+/* Tablet */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .ArtistsPage {
+        padding: 12% 5%;
+    }
+}
+
+/* Laptop / Small Screen */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .ArtistsPage {
+        padding: 8% 4%;
+    }
+}
+
+/* Desktop / Large Screen */
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+    .ArtistsPage {
+        padding: 6% 3%;
+    }
+}
+
+/* Tv / X-Large Screen */
+@media screen and (min-width: 1021px) {
+    .ArtistsPage {
+        padding: 6% 2%;
+    }
+}

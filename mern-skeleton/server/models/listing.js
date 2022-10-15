@@ -1,10 +1,18 @@
 import mongoose from "mongoose";
 
 const listingSchema = new mongoose.Schema(
-    {
-        title: { type: String, required: true },
-        price: { type: Number, required: true }
-    }
-)
+  {
+    albumId: String,
+    title: String,
+    format: String,
+    condition: String,
+    price: Number,
+    description: String,
+    collectionlist: { type: mongoose.Schema.ObjectId, ref: "Collection" },
+  },
+  {
+    timestamps: true,
+  }
+);
 
-export default mongoose.model('Listing', listingSchema)
+export default mongoose.model("Listing", listingSchema);
