@@ -1,4 +1,9 @@
-form {
+.securityForm, .security-wrapper {
     display: flex;
     flex-direction: column;
+    width: 50vw;
+}
+
+.securityForm {
+        margin: 50px 0;
 }

@@ -28,8 +28,8 @@ function Security() {
     }
     return (
         <div>
-            <form>
-                    <div className='creditcard-wrapper'>
+            <form className='securityForm'>
+                    <div className='security-wrapper'>
                         <input type='text' placeholder='email' value={state.email} onChange={handleChange} name='email'></input>
                         <input type='text' placeholder='confirm email' value={state.emailConfirm} onChange={handleChange} name='emailConfirm'></input>
                         <input type='text' placeholder='password' value={state.password} onChange={handleChange} name='password'></input>

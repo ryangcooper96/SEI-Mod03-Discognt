@@ -1,15 +1,17 @@
 import React from "react";
-
+import "./Checkout.css"
 
 
 import { PaymentElement } from '@stripe/react-stripe-js';
 
 const CheckoutForm = () => {
     return (
-        <form>
+        <div className="stripe-wrapper">
+        <form className="stripeForm">
             <PaymentElement />
-            <button>Submit</button>
+            <button id="stripeSubmit">Submit</button>
         </form>
+        </div>
     );
 };
 
