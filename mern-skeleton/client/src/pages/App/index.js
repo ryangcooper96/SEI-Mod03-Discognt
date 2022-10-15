@@ -13,13 +13,16 @@ import Dashboard from "../Dashboard/Dashboard";
 import ProductPage from "../ProductPage/ProductPage";
 import ArtistsPage from "../ArtistsPage/ArtistsPage";
 import Checkout from "../Checkout/Checkout";
+import BasketPage from "../BasketPage/BasketPage";
 
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
-const stripePromise = loadStripe('pk_test_51LsWKuK3m4JInnwoPDle8M9tWKsWzi8whmAyod8xOLPrtHRgPC9JimDhbOqdnmmgxQicXRqu9XVosHDTZfT1A0Nk00IURxFiXG');
+const stripePromise = loadStripe(
+  "pk_test_51LsWKuK3m4JInnwoPDle8M9tWKsWzi8whmAyod8xOLPrtHRgPC9JimDhbOqdnmmgxQicXRqu9XVosHDTZfT1A0Nk00IURxFiXG"
+);
 
 function App() {
   // const [clientSecret, setClientSecret] = React.useState('');
@@ -30,7 +33,8 @@ function App() {
   // })
   const options = {
     // passing the client secret obtained from the server
-    clientSecret: 'pi_3Lt7aHK3m4JInnwo0ZkR9Zf4_secret_dsE134xOYSWLwpfj2nLC4hIo8',
+    clientSecret:
+      "pi_3Lt7aHK3m4JInnwo0ZkR9Zf4_secret_dsE134xOYSWLwpfj2nLC4hIo8",
   };
   return (
     <div className="app-wrapper">
@@ -46,6 +50,7 @@ function App() {
             <Route exact path="/marketplace/:id" element={<ProductPage />} />
             <Route exact path="/signup" element={<SignupPage />} />
             <Route exact path="/login" element={<LoginPage />} />
+            <Route exact path="/basket" element={<BasketPage />} />
             <Route exact path="/checkout" element={<Checkout />} />
             <Route
               exact

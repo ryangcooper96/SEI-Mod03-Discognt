@@ -25,7 +25,7 @@ function ProductPage() {
             setResult({...data})
         }
         getResult()
-    })    
+    }, [id])    
     
     return (
       <div className='ProductPage'>

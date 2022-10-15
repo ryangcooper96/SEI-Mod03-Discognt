@@ -22,7 +22,7 @@ const NavBar = () => {
           &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
           <span className='NavBar-welcome'>WELCOME, {user.name}</span>
           &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-          <NavLink to='' className='NavBar-link' ></NavLink>
+          <NavLink to='/basket' className='NavBar-link' ><span className="material-symbols-outlined">shopping_cart</span></NavLink>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@ const NavBar = () => {
         &nbsp;&nbsp;|&nbsp;&nbsp;
         <NavLink to='/signup' className='NavBar-link'>SIGN UP</NavLink>
         &nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-        <NavLink to='' className='NavBar-link' ><span className="material-symbols-outlined">shopping_basket</span></NavLink>
+        <NavLink to='/basket' className='NavBar-link' ><span className="material-symbols-outlined">shopping_cart</span></NavLink>
       </div>
     </div>
     ;
