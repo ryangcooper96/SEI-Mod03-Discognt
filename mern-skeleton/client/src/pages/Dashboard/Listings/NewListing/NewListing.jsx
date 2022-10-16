@@ -1,6 +1,6 @@
 import React, { useState} from 'react'
 import { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import listingService from '../../../../utils/listingService'
 import discogs from "../../../../utils/discogsService"
 
@@ -16,6 +16,7 @@ function NewListing() {
   })
 
   const { id } = useParams();
+  const navigate = useNavigate()
   console.log(id)
 
   useEffect(() => {
@@ -43,7 +44,7 @@ function NewListing() {
             // Let <App> know a user has signed up!
             // handleSignupOrLogin();
             // Successfully signed up - show GamePage
-            // navigate('/');
+            navigate('/dashboard/listings');
         } catch (err) {
             // Invalid user data (probably duplicate email)
             // updateMessage(err.message);
