@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom'
-import listingService from '../../../../utils/listingService'
+import listingService from '../../../../utils/listing'
 import discogs from "../../../../utils/discogsService"
 
 function NewListing() {

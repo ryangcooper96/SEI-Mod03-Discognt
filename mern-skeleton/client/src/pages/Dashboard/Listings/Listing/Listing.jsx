@@ -1,5 +1,5 @@
 import React from 'react'
-import listingService from '../../../../utils/listingService'
+import listingService from '../../../../utils/listing'
 
 function Listing(props) {
     const handleDelete = async (e) => {
