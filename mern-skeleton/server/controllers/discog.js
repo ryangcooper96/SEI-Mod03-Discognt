@@ -101,11 +101,11 @@ export async function searchDatabase(req, res, next) {
     if (results) {
       res.json(results);
       // console.log(results.results);
-      console.log(
-        results.results.map((item) => {
-          return item.title;
-        })
-      );
+      // console.log(
+      //   results.results.map((item) => {
+      //     return item.title;
+      //   })
+      // );
     } else {
       res.json({ error: true, message: "Not found." });
     }

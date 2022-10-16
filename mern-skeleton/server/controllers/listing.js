@@ -13,9 +13,9 @@ export async function createListing(req, res) {
 export async function getListingsByCollection(req, res) {
   try {
     const listings = await Listing.find({
-      collectionlist: req.params.id,
+      in_collection: req.params.id,
     }).sort("title");
-    //   .populate("collectionlist");
+    //   .populate("in_collection");
     res.json(listings);
   } catch (err) {
     return res.status(400).json(err);
@@ -28,7 +28,7 @@ export async function getListingsByAlbumId(req, res) {
     const listings = await Listing.find({
       albumId: req.params.id,
     }).sort("price");
-    //   .populate("collectionlist");
+    //   .populate("in_collection");
     res.json(listings);
   } catch (err) {
     return res.status(400).json(err);
@@ -38,7 +38,7 @@ export async function getListingsByAlbumId(req, res) {
 export async function getListingById(req, res) {
   try {
     const listing = await Listing.findById(req.params.id);
-    //   .populate("collectionlist")
+    //   .populate("in_collection")
     //   .exec();
     if (!listing)
       return res.status(400).json({

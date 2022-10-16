@@ -1,5 +1,5 @@
 import express from "express";
-import * as listingController from "../../controllers/listingController.js";
+import * as listingController from "../../controllers/listing.js";
 
 const listingRoutes = express.Router();
 

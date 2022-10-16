@@ -1,16 +1,12 @@
 import express from "express";
-import * as discogController from "../../controllers/discogController.js";
+import * as discog from "../../controllers/discog.js";
 
 const discogRoutes = express.Router();
 
-discogRoutes.route("/releases/:id").get(discogController.getAlbumById);
+discogRoutes.route("/releases/:id").get(discog.getAlbumById);
 
-discogRoutes.route("/artists/:id").get(discogController.getArtistById);
+discogRoutes.route("/artists/:id").get(discog.getArtistById);
 
-// discogRoutes
-//   .route("/artists/:id/releases")
-//   .get(discogController.getReleasesByArtistId);
-
-discogRoutes.route("/search/database").get(discogController.searchDatabase);
+discogRoutes.route("/search/database").get(discog.searchDatabase);
 
 export default discogRoutes;
