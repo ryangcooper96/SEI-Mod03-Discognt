@@ -8,7 +8,8 @@ const listingSchema = new mongoose.Schema(
     condition: String,
     price: Number,
     description: String,
-    collectionlist: { type: mongoose.Schema.ObjectId, ref: "Collection" },
+    in_collection: { type: mongoose.Schema.ObjectId, ref: "Collection" },
+    in_cart: { type: mongoose.Schema.ObjectId, ref: "Cart" },
   },
   {
     timestamps: true,
