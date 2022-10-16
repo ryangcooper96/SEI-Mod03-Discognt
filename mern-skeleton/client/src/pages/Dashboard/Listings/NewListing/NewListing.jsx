@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
-import listingService from "../../../../utils/listing.js";
-import discogs from "../../../../utils/discogsService";
+import React, { useState } from 'react'
+import { useEffect } from 'react';
+import { Link, useParams, useNavigate } from 'react-router-dom'
+import listingService from '../../../../utils/listingService'
+import discogs from "../../../../utils/discogsService"
 
 function NewListing() {
   const [listing, setListing] = useState({
@@ -15,6 +15,8 @@ function NewListing() {
   });
 
   const { id } = useParams();
+  const navigate = useNavigate()
+  console.log(id)
   console.log(id);
 
   useEffect(() => {
@@ -46,76 +48,77 @@ function NewListing() {
       // Let <App> know a user has signed up!
       // handleSignupOrLogin();
       // Successfully signed up - show GamePage
-      // navigate('/');
+      navigate('/dashboard/listings');
     } catch (err) {
       // Invalid user data (probably duplicate email)
       // updateMessage(err.message);
     }
   };
 
-  return (
-    <div className="NewListing">
-      NewListing
-      <form className="form-horizontal" onSubmit={handleSubmit}>
-        <div className="form-group">
-          <div className="col-sm-12">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Format"
-              value={listing.format}
-              name="format"
-              onChange={handleChange}
-            />
-          </div>
+return (
+  <div className="NewListing">
+    NewListing
+    <form className="form-horizontal" onSubmit={handleSubmit}>
+      <div className="form-group">
+        <div className="col-sm-12">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Format"
+            value={listing.format}
+            name="format"
+            onChange={handleChange}
+          />
         </div>
-        <div className="form-group">
-          <div className="col-sm-12">
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Condition"
-              value={listing.condition}
-              name="condition"
-              onChange={handleChange}
-            />
-          </div>
+      </div>
+      <div className="form-group">
+        <div className="col-sm-12">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Condition"
+            value={listing.condition}
+            name="condition"
+            onChange={handleChange}
+          />
         </div>
-        <div className="form-group">
-          <div className="col-sm-12">
-            <input
-              type="number"
-              className="form-control"
-              placeholder="Price"
-              value={listing.price}
-              name="price"
-              onChange={handleChange}
-            />
-          </div>
+      </div>
+      <div className="form-group">
+        <div className="col-sm-12">
+          <input
+            type="number"
+            className="form-control"
+            placeholder="Price"
+            value={listing.price}
+            name="price"
+            onChange={handleChange}
+          />
         </div>
-        <div className="form-group">
-          <div className="col-sm-12">
-            <textarea
-              type="text"
-              className="form-control"
-              placeholder="Description"
-              value={listing.description}
-              name="description"
-              onChange={handleChange}
-            />
-          </div>
+      </div>
+      <div className="form-group">
+        <div className="col-sm-12">
+          <textarea
+            type="text"
+            className="form-control"
+            placeholder="Description"
+            value={listing.description}
+            name="description"
+            onChange={handleChange}
+          />
         </div>
+      </div>
 
-        <div className="form-group">
-          <div className="col-sm-12 text-center">
-            <button className="btn btn-default">Create Listing</button>
-            &nbsp;&nbsp;
-            <Link to="/">Cancel</Link>
-          </div>
+      <div className="form-group">
+        <div className="col-sm-12 text-center">
+          <button className="btn btn-default">Create Listing</button>
+          &nbsp;&nbsp;
+          <Link to="/">Cancel</Link>
         </div>
-      </form>
-    </div>
-  );
+      </div>
+    </form>
+  </div>
+);
 }
+
 
 export default NewListing;
