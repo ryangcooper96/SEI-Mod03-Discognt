@@ -15,9 +15,11 @@ function Listings({ releaseId }) {
     async function getListings() {
       const listings = await listing.getListingsByAlbumId(`${releaseId}`);
       setListings([...listings]);
+      console.log(listings)
     }
     getListings();
   }, [releaseId])
+
 
   return (
     <div className='Listings'>
