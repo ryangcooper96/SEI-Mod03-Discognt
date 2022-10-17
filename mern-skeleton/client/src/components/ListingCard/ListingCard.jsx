@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
+import { NavLink} from 'react-router-dom'
 import useUser from '../../hooks/useUser'
 import listing from "../../utils/listing"
 import cart from "../../utils/cart"
@@ -8,21 +9,23 @@ import "./ListingCard.css"
 
 function ListingCard({ listing }) {
 
+    const [basket, setBasket] = useState([]);
     const { user } = useUser();
-    console.log(user);
-
+    // console.log(user);
+    
     // OBTAIN USER BASKET
     useEffect(() => {
         async function getCart() {
             const userCart = await cart.getCartByOwnerId(user._id)
-            console.log(userCart)
+            setBasket([...userCart])
         }
         getCart()
     }, [user])
 
     // ADD TO BASKET
-    async function handleAddToBasket(e) {
-        console.log(e.target.value)
+    function handleAddToBasket() {
+        // function from utils/cart.js to add to add listing to basket (listing._id)
+        // getCart()
     }
     
     // NEED TO FIND A WAY TO GET THE USER ASSOCIATED WITH A LISTING
@@ -66,12 +69,14 @@ if (listing) {
                 </span>
             </button> */}
             {isListingOwnedByUser() ? (
+                <NavLink to='/dashboard/listings/' >
                 <button className='ListingCard-button'>
                     <span>Update Listing</span>
                     <span className="material-symbols-outlined">
                         album
                     </span>
-                </button>) 
+                </button>
+                </NavLink>) 
                 : 
                 (<button className='ListingCard-button' value={listing._id} onClick={handleAddToBasket}>
                     {}
