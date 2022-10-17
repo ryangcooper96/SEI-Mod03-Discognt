@@ -25,7 +25,7 @@ function Tracklist({ tracklist }) {
         </thead>
         <tbody>
             {tracklist.map((track) => (
-            <tr>
+            <tr key={track.position}>
                 <td>{track.position}</td>
                 <td>{track.title}</td>
                 <td>{track.duration}</td>
