@@ -11,7 +11,6 @@ function ListingCard({ listing }) {
 
     const [basket, setBasket] = useState([]);
     const { user } = useUser();
-    // console.log(user);
     
     // OBTAIN USER BASKET
     useEffect(() => {
@@ -35,13 +34,12 @@ function ListingCard({ listing }) {
 
     // IF LISTING BELONGS TO USER THEN DIRECT TO UPDATE LISTING PAGE
     function isListingInBasket() {
-        console.log(listing.id)
+        return (basket.every((item) => (item._id !== listing.id)))
     }    
 
-
-
-if (listing) {
+if (listing && isListingInBasket()) {
     return (
+        
         <div className='ListingCard'>
             <div className='ListingCard-user'>
                 <span className="material-symbols-outlined">
@@ -59,15 +57,6 @@ if (listing) {
                 <span className='ListingCard-price'>Price: <span>£ {listing.price}</span></span>
                 <span className='ListingCard-description'>"{listing.description}"</span>
             </div>
-            {/* <button className='ListingCard-button'>
-                <span>Add to Basket</span>
-                <span className="material-symbols-outlined">
-                    add_shopping_cart
-                </span>
-                <span className="material-symbols-outlined">
-                    remove_shopping_cart
-                </span>
-            </button> */}
             {isListingOwnedByUser() ? (
                 <NavLink to='/dashboard/listings/' >
                 <button className='ListingCard-button'>
@@ -79,15 +68,10 @@ if (listing) {
                 </NavLink>) 
                 : 
                 (<button className='ListingCard-button' value={listing._id} onClick={handleAddToBasket}>
-                    {}
                     <span>Add to Basket</span>
                     <span className="material-symbols-outlined">
                         add_shopping_cart
-                    </span>
-                    <span>Remove from Basket</span>
-                    <span className="material-symbols-outlined">
-                        remove_shopping_cart
-                    </span>                    
+                    </span>                  
                 </button>)
             }
         </div>)
