@@ -14,8 +14,12 @@ export async function getListingsByCollection(req, res) {
   try {
     const listings = await Listing.find({
       in_collection: req.params.id,
-    }).sort("title");
-    //   .populate("in_collection");
+    })
+      .sort("title")
+      .populate({
+        path: "in_collection",
+        populate: { path: "owner" },
+      });
     res.json(listings);
   } catch (err) {
     return res.status(400).json(err);
@@ -27,8 +31,12 @@ export async function getListingsByAlbumId(req, res) {
   try {
     const listings = await Listing.find({
       albumId: req.params.id,
-    }).sort("price");
-    //   .populate("in_collection");
+    })
+      .sort("price")
+      .populate({
+        path: "in_collection",
+        populate: { path: "owner" },
+      });
     res.json(listings);
   } catch (err) {
     return res.status(400).json(err);
@@ -37,9 +45,10 @@ export async function getListingsByAlbumId(req, res) {
 
 export async function getListingById(req, res) {
   try {
-    const listing = await Listing.findById(req.params.id);
-    //   .populate("in_collection")
-    //   .exec();
+    const listing = await Listing.findById(req.params.id).populate({
+      path: "in_collection",
+      populate: { path: "owner" },
+    });
     if (!listing)
       return res.status(400).json({
         error: "Listing not found",
