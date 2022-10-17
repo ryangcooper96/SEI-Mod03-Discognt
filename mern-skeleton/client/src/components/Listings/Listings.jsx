@@ -1,25 +1,38 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import ListingCard from '../ListingCard/ListingCard'
+import useUser from '../../hooks/useUser'
+import listing from '../../utils/listing'
 import "./Listings.css"
+import { useEffect } from 'react'
+import { useState } from 'react'
 
 function Listings({ releaseId }) {
+
+  const [listings, setListings] = useState([])
+
+  useEffect(() => {
+    async function getListings() {
+      const listings = await listing.getListingsByAlbumId(`${releaseId}`);
+      setListings([...listings]);
+    }
+    getListings();
+  }, [releaseId])
+
   return (
     <div className='Listings'>
-        <h2>Listings</h2>
-        <div className='Listings-container'>
-          <NavLink to={`/dashboard/listings/new/${releaseId}`}>
+      <h2>Listings</h2>
+      <div className='Listings-container'>
+        <NavLink to={`/dashboard/listings/new/${releaseId}`}>
           <button className='Listings-button'>
             <span>Create Listing</span>
             <span className="material-symbols-outlined">
               album
             </span>
           </button>
-          </NavLink>
-          <ListingCard />        
-          <ListingCard />        
-          <ListingCard />        
-        </div>
+        </NavLink>
+        {listings.map((listing) => (<ListingCard listing={listing} key={listing.id}/>))}     
+      </div>
     </div>
   )
 }
