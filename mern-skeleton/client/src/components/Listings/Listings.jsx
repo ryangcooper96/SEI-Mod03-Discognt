@@ -10,6 +10,8 @@ import { useState } from 'react'
 function Listings({ releaseId }) {
 
   const [listings, setListings] = useState([])
+  const { user } = useUser();
+  console.log(user)
 
   useEffect(() => {
     async function getListings() {

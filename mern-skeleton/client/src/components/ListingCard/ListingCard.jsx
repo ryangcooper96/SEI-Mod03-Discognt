@@ -2,12 +2,28 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import useUser from '../../hooks/useUser'
 import listing from "../../utils/listing"
+import cart from "../../utils/cart"
 
 import "./ListingCard.css"
 
 function ListingCard({ listing }) {
 
     const { user } = useUser();
+    console.log(user);
+
+    // OBTAIN USER BASKET
+    useEffect(() => {
+        async function getCart() {
+            const userCart = await cart.getCartByOwnerId(user._id)
+            console.log(userCart)
+        }
+        getCart()
+    }, [user])
+
+    // ADD TO BASKET
+    async function handleAddToBasket(e) {
+        console.log(e.target.value)
+    }
     
     // NEED TO FIND A WAY TO GET THE USER ASSOCIATED WITH A LISTING
     function isListingOwnedByUser() {
@@ -57,7 +73,7 @@ if (listing) {
                     </span>
                 </button>) 
                 : 
-                (<button className='ListingCard-button'>
+                (<button className='ListingCard-button' value={listing._id} onClick={handleAddToBasket}>
                     {}
                     <span>Add to Basket</span>
                     <span className="material-symbols-outlined">
