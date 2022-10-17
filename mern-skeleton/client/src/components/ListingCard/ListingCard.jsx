@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import { NavLink} from 'react-router-dom'
 import useUser from '../../hooks/useUser'
-import listing from "../../utils/listing"
+import listingService from "../../utils/listing"
 import cart from "../../utils/cart"
 
 import "./ListingCard.css"
@@ -25,8 +25,9 @@ function ListingCard({ listing }) {
     function handleAddToBasket(listingId) {
         // function from utils/cart.js to add to add listing to basket (listing._id)
         // getCart()
+        console.log(listingId)
         async function addToBasket(listingId) {
-            await listing.addListingToCart(listingId)
+            await listingService.addListingToCart(listingId)
 
         }
         addToBasket(listingId)
@@ -39,7 +40,7 @@ function ListingCard({ listing }) {
 
     // IF LISTING BELONGS TO USER THEN DIRECT TO UPDATE LISTING PAGE
     function isListingInBasket() {
-        return (basket.every((item) => (item._id !== listing.id)))
+        return (basket.every((item) => (item._id !== listing._id)))
     }    
 
 if (listing && isListingInBasket()) {
@@ -72,7 +73,7 @@ if (listing && isListingInBasket()) {
                 </button>
                 </NavLink>) 
                 : 
-                (<button className='ListingCard-button' value={listing._id} onClick={() => (handleAddToBasket(listing._id))}>
+                (<button className='ListingCard-button' onClick={() => (handleAddToBasket(listing._id))}>
                     <span>Add to Basket</span>
                     <span className="material-symbols-outlined">
                         add_shopping_cart

@@ -10,7 +10,7 @@ function addListingToCart(listingId) {
   const userId = loggedInUser(); // from token
   return cartId(userId)
     .then((cartId) => {
-      let update;
+      let update = {};
       update.in_cart = cartId;
       return update;
     })
