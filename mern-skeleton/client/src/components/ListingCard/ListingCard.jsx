@@ -1,30 +1,24 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
+import useUser from '../../hooks/useUser'
 import listing from "../../utils/listing"
 
 import "./ListingCard.css"
 
 function ListingCard({ listing }) {
 
-//   useEffect(() => {
-//     async function getListings() {
-//       const listings = await listing.getListingsByAlbumId(`${releaseId}`);
-//       setListings([...listings]);
-//       console.log(listings);
-//     }
-//     getListings();
-//   }, [releaseId])
+    const { user } = useUser();
+    
+    // NEED TO FIND A WAY TO GET THE USER ASSOCIATED WITH A LISTING
+    function isListingOwnedByUser() {
+        return (listing.in_collection.owner._id === user._id)
+    }
 
-    useEffect(() => {
-        async function getListingOwner() {
-            // const owner = await 
+    // IF LISTING BELONGS TO USER THEN DIRECT TO UPDATE LISTING PAGE
+    function isListingInBasket() {
+        console.log(listing.id)
+    }    
 
-        }
-    })
-
-// NEED TO FIND A WAY TO GET THE USER ASSOCIATED WITH A LISTING
-
-// IF LISTING BELONGS TO USER THEN DIRECT TO UPDATE LISTING PAGE
 
 
 if (listing) {
@@ -34,7 +28,7 @@ if (listing) {
                 <span className="material-symbols-outlined">
                     account_circle
                 </span>
-                {/* <span>{listing.user.username} | {listing.user.rating} </span> */}
+                <span>{listing.in_collection.owner.name} | {(Math.random() * 5).toFixed(2)} </span>
                 <span className="material-symbols-outlined">
                     star
                 </span>
@@ -46,15 +40,35 @@ if (listing) {
                 <span className='ListingCard-price'>Price: <span>£ {listing.price}</span></span>
                 <span className='ListingCard-description'>"{listing.description}"</span>
             </div>
-            <button className='ListingCard-button'>
+            {/* <button className='ListingCard-button'>
                 <span>Add to Basket</span>
                 <span className="material-symbols-outlined">
                     add_shopping_cart
                 </span>
-                {/* <span className="material-symbols-outlined">
+                <span className="material-symbols-outlined">
                     remove_shopping_cart
-                </span> */}
-            </button>
+                </span>
+            </button> */}
+            {isListingOwnedByUser() ? (
+                <button className='ListingCard-button'>
+                    <span>Update Listing</span>
+                    <span className="material-symbols-outlined">
+                        album
+                    </span>
+                </button>) 
+                : 
+                (<button className='ListingCard-button'>
+                    {}
+                    <span>Add to Basket</span>
+                    <span className="material-symbols-outlined">
+                        add_shopping_cart
+                    </span>
+                    <span>Remove from Basket</span>
+                    <span className="material-symbols-outlined">
+                        remove_shopping_cart
+                    </span>                    
+                </button>)
+            }
         </div>)
 } else {return <></>}
 }
