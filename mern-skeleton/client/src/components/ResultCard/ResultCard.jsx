@@ -10,7 +10,7 @@ function ResultCard( { result, location }) {
         <Link to={`/${location}/${result.id}`}>
         <div className='ResultCard-content'>
             <div className='ResultCard-image'>
-                <img src={result.cover_image} alt={result.title}/>
+                <img src={result.cover_image ? result.cover_image : result.images[0].resource_url} alt={result.title}/>
             </div>
             <div className='ResultCard-text'>
                 {/* <h2>{result.title}</h2> */}

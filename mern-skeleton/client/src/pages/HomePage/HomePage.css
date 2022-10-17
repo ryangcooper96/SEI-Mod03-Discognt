@@ -4,15 +4,35 @@
     justify-content: flex-start;
     align-items: center;
 
-    min-height: 100vh;
+    /* min-height: 100vh; */
     /* margin-top: 30px; */
     padding: 5vh 10vw;
 }
 
-.Home-heroWrapper {
-
+.Home > * {
+    margin-bottom: 4vh;
 }
 
 .Home-welcome {
-    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    
+    background: whitesmoke;
+    border-radius: 10px;
+    padding: 2vh 5vw;
+}
+
+.Home-welcomeTitle {
+    font-family: 'Rubik Dirt';
+    font-size: 36px;
+    font-weight: 200;
+    margin: 0 0 10px 0;
+}
+
+.Home-welcomeText {
+    font-size: 15px;
+    font-weight: 200;
+    margin: 0;
 }
