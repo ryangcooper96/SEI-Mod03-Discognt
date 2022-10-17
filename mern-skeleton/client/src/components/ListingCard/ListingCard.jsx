@@ -22,9 +22,14 @@ function ListingCard({ listing }) {
     }, [user])
 
     // ADD TO BASKET
-    function handleAddToBasket() {
+    function handleAddToBasket(listingId) {
         // function from utils/cart.js to add to add listing to basket (listing._id)
         // getCart()
+        async function addToBasket(listingId) {
+            await listing.addListingToCart(listingId)
+
+        }
+        addToBasket(listingId)
     }
     
     // NEED TO FIND A WAY TO GET THE USER ASSOCIATED WITH A LISTING
@@ -59,7 +64,7 @@ if (listing && isListingInBasket()) {
             </div>
             {isListingOwnedByUser() ? (
                 <NavLink to='/dashboard/listings/' >
-                <button className='ListingCard-button'>
+                <button className='ListingCard-button' >
                     <span>Update Listing</span>
                     <span className="material-symbols-outlined">
                         album
@@ -67,7 +72,7 @@ if (listing && isListingInBasket()) {
                 </button>
                 </NavLink>) 
                 : 
-                (<button className='ListingCard-button' value={listing._id} onClick={handleAddToBasket}>
+                (<button className='ListingCard-button' value={listing._id} onClick={() => (handleAddToBasket(listing._id))}>
                     <span>Add to Basket</span>
                     <span className="material-symbols-outlined">
                         add_shopping_cart
