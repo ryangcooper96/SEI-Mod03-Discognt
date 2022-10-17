@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
 
 function FeaturedAlbums() {
 
-  const featured = [ 60722, 191288, 18479]
+  const featured = [ 60722, 191288, 18479, 941533]
   const [albums, setAlbums] = useState([]);
 
   useEffect(() => {

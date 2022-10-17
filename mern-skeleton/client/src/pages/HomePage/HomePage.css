@@ -18,6 +18,8 @@
     flex-flow: column nowrap;
     justify-content: center;
     align-items: flex-start;
+
+    width: 100%;
     
     background: whitesmoke;
     border-radius: 10px;
