@@ -8,7 +8,7 @@ const NavBar = () => {
 
   let nav = user ?
     <div className='NavBar'>
-      <span className='NavBar-logo'>Discogn't</span> 
+      <NavLink to='/' className='NavBar-link'><span className='NavBar-logo'>Discogn't</span></NavLink>
       <div>
         <div>
           <NavLink to='/dashboard' className='NavBar-link'>Dashboard</NavLink>
