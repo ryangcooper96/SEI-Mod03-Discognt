@@ -5,6 +5,8 @@ const listingRoutes = express.Router();
 
 listingRoutes.route("/new").post(listingController.createListing);
 
+listingRoutes.route("/cart/:id").get(listingController.getListingsByCartId);
+
 listingRoutes
   .route("/collection/:id")
   .get(listingController.getListingsByCollection);
