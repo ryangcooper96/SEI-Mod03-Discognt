@@ -20,7 +20,6 @@ function Listings({ releaseId }) {
     getListings();
   }, [releaseId])
 
-
   return (
     <div className='Listings'>
       <h2>Listings</h2>

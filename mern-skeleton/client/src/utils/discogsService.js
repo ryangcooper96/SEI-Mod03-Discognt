@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000/api/discogs/";
+const BASE_URL = "/api/discogs/";
 
 // required parameter: album id (number), returns album object
 function getAlbumById(albumId) {

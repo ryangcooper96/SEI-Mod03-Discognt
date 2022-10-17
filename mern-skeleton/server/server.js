@@ -12,6 +12,7 @@ import listingRoutes from "./routes/api/listings.js";
 import userRoutes from "./routes/api/users.js";
 import stripeRoutes from "./routes/api/stripe.js";
 import collectionRoutes from "./routes/api/collections.js";
+import cartRoutes from "./routes/api/cart.js";
 import auth from "./config/auth.js";
 
 import { connectToDb } from "./config/database.js";
@@ -36,6 +37,7 @@ app.use("/api/listings", listingRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/stripe", stripeRoutes);
 app.use("/api/collections", collectionRoutes);
+app.use("/api/cart", cartRoutes);
 
 // The following "catch all" route (note the *)is necessary
 // for a SPA's client-side routing to properly work
