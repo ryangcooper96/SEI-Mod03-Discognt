@@ -1,7 +1,7 @@
 import React from 'react'
 import ListingCard from '../ListingCard/ListingCard'
 
-function BasketItem(props) {
+function BasketItem({handleClick, item}) {
   //when the cart CRUD controllers are in update accordingly
   // const handleDelete = async (e) => {
   //   try {
@@ -17,9 +17,13 @@ function BasketItem(props) {
   //     console.log(error)
   //   }
   // }
-
-  return (
-    <div className='ListingCard'>
+  console.log(item._id)
+  
+  if (item) {
+    console.log(item._id)
+    
+    return (
+      <div className='ListingCard'>
       <div className='ListingCard-user'>
         <span className="material-symbols-outlined">
           account_circle
@@ -31,13 +35,13 @@ function BasketItem(props) {
       </div>
       <hr></hr>
       <div className='ListingCard-info'>
-        <span className='ListingCard-format'>Title: <span>{props.listing}</span></span>
-        <span className='ListingCard-format'>Format: <span>{props.format}</span></span>
-        <span className='ListingCard-condition'>Condition: <span>{props.condition}</span></span>
-        <span className='ListingCard-price'>Price: <span>£ {props.price}</span></span>
-        <span className='ListingCard-description'>"{props.description}"</span>
+        <span className='ListingCard-format'>Title: <span>{item.title}</span></span>
+        <span className='ListingCard-format'>Format: <span>{item.format}</span></span>
+        <span className='ListingCard-condition'>Condition: <span>{item.condition}</span></span>
+        <span className='ListingCard-price'>Price: <span>£ {item.price.toFixed(2)}</span></span>
+        <span className='ListingCard-description'>"{item.description}"</span>
       </div>
-      <button className='ListingCard-button'>
+      <button className='ListingCard-button' onClick={() => (handleClick(item._id))}>
         <span>Remove from Cart</span>
         {/* <span className="material-symbols-outlined">
           add_shopping_cart
@@ -49,16 +53,7 @@ function BasketItem(props) {
     </div>
   )
 }
-
-
-//   return (
-//                 <div className='BasketPage-basketItem'>
-//                 <h3 className='BasketPage-productTitle'>product - {props.listing}</h3>
-//                 <img className='BasketPage-productImage' src='' alt='product'/>
-//                 <ListingCard /> £{props.price} <button>Remove from cart</button>
-//             </div>
-//   )
-// }
+}
 
 export default BasketItem
 
