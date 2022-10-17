@@ -6,9 +6,9 @@ import { useEffect } from "react";
 function Listing(props) {
 
     const [state, setState] = React.useState({
-        condition: '',
-        price: 0,
-        description: ''
+        // condition: '',
+        // price: 0,
+        // description: ''
     })
 
     const handleChange = (e) => {
@@ -25,6 +25,7 @@ function Listing(props) {
         } catch (error) {
             console.log(error);
         }
+        setState({})
     };
     async function handleUpdate(e) {
         // e.preventDefault();
@@ -44,19 +45,25 @@ function Listing(props) {
         fetchListing()
     }, [props])
 
+    function isObjectPopulated(value) {
+        return !(Object.keys(value).length === 0 && value.constructor === Object);
+    }
+
+
     console.log(props)
+if (isObjectPopulated(state)) {
     return (
         <div>
-            <h4>Title: {props.title}</h4>
+            <h4>Title: {state.title}</h4>
             <p>
-                Condition: {props.condition}, price: £{`${props.price}`}, description:{" "}
-                {props.description}
+                Condition: {state.condition}, price: £{`${state.price}`}, description:{" "}
+                {state.description}
             </p>
             {/* <button onClick={() => handleUpdate(props.listingId)}>Update</button> */}
             <form onSubmit={handleUpdate}>
-                <input name='condition' type='text' placeholder={`${props.condition}`} value={state.condition} onChange={handleChange} />
-                <input name='price' type='number' placeholder={`${props.price}`} value={state.price} onChange={handleChange} />
-                <textarea name='description' type='text' placeholder={`${props.description}`} value={state.description} onChange={handleChange} />
+                <input name='condition' type='text' placeholder={`${state.condition}`} value={state.condition} onChange={handleChange} />
+                <input name='price' type='number' placeholder={`${state.price}`} value={state.price} onChange={handleChange} />
+                <textarea name='description' type='text' placeholder={`${state.description}`} value={state.description} onChange={handleChange} />
                 <button>update</button>
             </form>
 
@@ -65,6 +72,7 @@ function Listing(props) {
             <button onClick={() => handleDelete(props.listingId)}>Delete</button>
         </div>
     );
+}    
 }
 
 export default Listing;
