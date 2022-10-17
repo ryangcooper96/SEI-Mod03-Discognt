@@ -1,39 +1,32 @@
 import React from 'react'
 import Listing from './Listing/Listing'
-import { useState } from 'react'
+import listingService from '../../../utils/listing.js'
+import { useState, useEffect } from 'react'
 
 function ListingsPage() {
   //fetch listings data
   const [listings, setListings] = useState([{
-    listingId: '',
+    _id: '',
     albumId: '',
-    title: 'test',
-    format: 'test',
-    condition: 'test',
+    title: '',
+    format: '',
+    condition: '',
     price: 0,
-    description: 'test'
-  },
-    {
-      listingId: '',
-      albumId: '',
-      title: 'test',
-      format: 'test',
-      condition: 'test',
-      price: 0,
-      description: 'test'
-    },
-    {
-      listingId: '',
-      albumId: '',
-      title: 'test',
-      format: 'test',
-      condition: 'test',
-      price: 0,
-      description: 'test'
-    }])
+    description: ''
+  }])
+
+useEffect(() => {
+  const handleListings = async () => {
+const listings = await listingService.getListingsbyLoggedInUser();
+    setListings([...listings])
+
+}
+handleListings();
+}, [])
+  console.log(listings);
   return (
     <div>{listings.map((item) => {
-      return (<Listing listingId={item.listingId} title={item.title} format={item.format} condition={item.condition} price={item.price} description={item.description} />)
+      return (<Listing listingId={item._id} title={item.title} format={item.format} condition={item.condition} price={item.price} description={item.description} />)
     }
     )
   }</div>)
