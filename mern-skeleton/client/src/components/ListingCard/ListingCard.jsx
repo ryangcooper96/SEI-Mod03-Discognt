@@ -1,34 +1,39 @@
 import React, { useState } from 'react'
 import "./ListingCard.css"
 
-function ListingCard() {
+function ListingCard({ listing }) {
 
-    const [listing, setListing] = useState({
-        user: {username: 'Ryan6753', rating: 4.6},
-        condition: "Mint",
-        format: "LP Vinyl",
-        description: "In really good nick!",
-        price: 17.99,
-    })
+//   useEffect(() => {
+//     async function getListings() {
+//       const listings = await listing.getListingsByAlbumId(`${releaseId}`);
+//       setListings([...listings]);
+//       console.log(listings);
+//     }
+//     getListings();
+//   }, [releaseId])
 
-  return (
-    <div className='ListingCard'>
-        <div className='ListingCard-user'>
-            <span className="material-symbols-outlined">
-                account_circle
-            </span>
-            <span>{listing.user.username} | {listing.user.rating} </span>
-            <span className="material-symbols-outlined">
-                star
-            </span>
-        </div>
-        <hr></hr>
-        <div className='ListingCard-info'>
-            <span className='ListingCard-format'>Format: <span>LP Vinyl</span></span>
-            <span className='ListingCard-condition'>Condition: <span>{listing.condition}</span></span>
-            <span className='ListingCard-price'>Price: <span>£ {listing.price}</span></span>
-            <span className='ListingCard-description'>"{listing.description}"</span>
-        </div>
+// NEED TO FIND A WAY TO GET THE USER ASSOCIATED WITH A LISTING
+
+
+if (listing) {
+    return (
+        <div className='ListingCard'>
+            <div className='ListingCard-user'>
+                <span className="material-symbols-outlined">
+                    account_circle
+                </span>
+                {/* <span>{listing.user.username} | {listing.user.rating} </span> */}
+                <span className="material-symbols-outlined">
+                    star
+                </span>
+            </div>
+            <hr></hr>
+            <div className='ListingCard-info'>
+                <span className='ListingCard-format'>Format: <span>LP Vinyl</span></span>
+                <span className='ListingCard-condition'>Condition: <span>{listing.condition}</span></span>
+                <span className='ListingCard-price'>Price: <span>£ {listing.price}</span></span>
+                <span className='ListingCard-description'>"{listing.description}"</span>
+            </div>
             <button className='ListingCard-button'>
                 <span>Add to Basket</span>
                 <span className="material-symbols-outlined">
@@ -38,8 +43,8 @@ function ListingCard() {
                     remove_shopping_cart
                 </span> */}
             </button>
-    </div>
-  )
+        </div>)
+} else {return <></>}
 }
 
 export default ListingCard
