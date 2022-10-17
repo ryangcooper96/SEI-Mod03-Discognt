@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react'
+import listing from "../../utils/listing"
+
 import "./ListingCard.css"
 
 function ListingCard({ listing }) {
@@ -12,7 +15,16 @@ function ListingCard({ listing }) {
 //     getListings();
 //   }, [releaseId])
 
+    useEffect(() => {
+        async function getListingOwner() {
+            // const owner = await 
+
+        }
+    })
+
 // NEED TO FIND A WAY TO GET THE USER ASSOCIATED WITH A LISTING
+
+// IF LISTING BELONGS TO USER THEN DIRECT TO UPDATE LISTING PAGE
 
 
 if (listing) {

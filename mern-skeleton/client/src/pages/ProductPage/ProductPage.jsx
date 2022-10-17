@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 import discogs from "../../utils/discogsService"
+import useUser from '../../hooks/useUser'
 
 import BreadCrumbs from '../../components/BreadCrumbs/BreadCrumbs'
 import ImageViewer from '../../components/ImageViewer/ImageViewer'
@@ -14,6 +15,8 @@ function ProductPage() {
     const navigate = useNavigate()
     const [open, setOpen] = useState(false);
     const [result, setResult] = useState({})
+    // const { user } = useUser()
+    // console.log(user)
 
     const { id } = useParams();
 
