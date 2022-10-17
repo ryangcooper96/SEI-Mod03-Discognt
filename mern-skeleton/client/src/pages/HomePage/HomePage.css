@@ -20,6 +20,7 @@
     align-items: flex-start;
 
     width: 100%;
+    box-sizing: border-box;
     
     background: whitesmoke;
     border-radius: 10px;
