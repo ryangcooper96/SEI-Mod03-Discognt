@@ -5,7 +5,6 @@ const CartSchema = new mongoose.Schema(
     customer_name: String,
     customer_email: String,
     delivery_address: String,
-    updated: Date,
     status: {
       type: String,
       default: "Not processed",
@@ -24,6 +23,4 @@ const CartSchema = new mongoose.Schema(
   }
 );
 
-const Cart = mongoose.model("Cart", CartSchema);
-
-export { Cart, CartItem };
+export default mongoose.model("Cart", CartSchema);
