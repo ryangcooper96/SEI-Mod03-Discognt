@@ -1,6 +1,7 @@
 import React from 'react'
 import Listing from './Listing/Listing'
-import { useState } from 'react'
+import listing from '../../../utils/listing.js'
+import { useState, useEffect } from 'react'
 
 function ListingsPage() {
   //fetch listings data
@@ -31,6 +32,11 @@ function ListingsPage() {
       price: 0,
       description: 'test'
     }])
+
+useEffect(() => {
+setListings(listing.getListingsbyLoggedInUser());
+console.log(listings);
+}, [])
   return (
     <div>{listings.map((item) => {
       return (<Listing listingId={item.listingId} title={item.title} format={item.format} condition={item.condition} price={item.price} description={item.description} />)
