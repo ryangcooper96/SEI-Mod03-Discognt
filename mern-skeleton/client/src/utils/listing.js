@@ -1,8 +1,68 @@
 import collection from "./collection.js";
 import userService from "./userService.js";
+import cart from "./cart.js";
 const BASE_URL = "/api/listings/";
 
-// create listing by logged in user
+/* ---------------------------- listings in cart ---------------------------- */
+
+// add listing to cart of logged in user
+function addListingToCart(listingId) {
+  const userId = loggedInUser(); // from token
+  return cartId(userId)
+    .then((cartId) => {
+      let update;
+      update.in_cart = cartId;
+      return update;
+    })
+    .then((update) => {
+      updateListing(listingId, update);
+    })
+    .then((listing) => {
+      return listing;
+    });
+}
+
+// delete listing from cart
+function deleteListingFromCart(listingId) {
+  let update;
+  update.in_cart = null;
+  return updateListing(listingId, update).then((listing) => {
+    return listing;
+  });
+}
+
+// get listings in cart of logged in user
+function getListingsInCartbyLoggedInUser() {
+  const userId = loggedInUser(); // from token
+  return cartId(userId).then((cartId) => {
+    return getListingsByCartId(cartId).then((listings) => {
+      return listings;
+    });
+  });
+}
+
+// get listings in cart by user id
+function getListingsInCartByUser(userId) {
+  return cartId(userId).then((cartId) => {
+    return getListingsByCartId(cartId).then((listings) => {
+      return listings;
+    });
+  });
+}
+
+// get listings in cart by id
+function getListingsByCartId(cartId) {
+  return fetch(BASE_URL + "cart/" + cartId, {
+    method: "GET",
+  }).then((res) => {
+    if (res.ok) return res.json();
+    throw new Error("Listings not found.");
+  });
+}
+
+/* ------------------------ listings in a collection ------------------------ */
+
+// create listing in collection of logged in user
 function createListing(listing) {
   const userId = loggedInUser(); // from token
   return collectionId(userId)
@@ -23,7 +83,7 @@ function createListing(listing) {
     });
 }
 
-// get listings by logged in user
+// get listings in collection of logged in user
 function getListingsbyLoggedInUser() {
   const userId = loggedInUser(); // from token
   return collectionId(userId).then((id) => {
@@ -33,7 +93,7 @@ function getListingsbyLoggedInUser() {
   });
 }
 
-// get listings by user id
+// get listings in collection of user by user id
 function getListingsbyUser(userId) {
   return collectionId(userId).then((collectionId) => {
     return getListingsByCollection(collectionId).then((listings) => {
@@ -42,7 +102,7 @@ function getListingsbyUser(userId) {
   });
 }
 
-// get listings by collection id
+// get listings in collection by collection id
 function getListingsByCollection(collectionId) {
   return fetch(BASE_URL + "collection/" + collectionId, {
     method: "GET",
@@ -51,6 +111,7 @@ function getListingsByCollection(collectionId) {
     throw new Error("Listings not found.");
   });
 }
+/* ---------------------- listing by discog album id ------------------------ */
 
 // get all listings of a certain album
 function getListingsByAlbumId(albumId) {
@@ -61,6 +122,8 @@ function getListingsByAlbumId(albumId) {
     throw new Error("Can't find listings for this album.");
   });
 }
+
+/* ----------------------- standard crud (the rest) ------------------------ */
 
 function getListingById(listingId) {
   return fetch(BASE_URL + listingId, {
@@ -105,10 +168,22 @@ function collectionId(userId) {
   });
 }
 
+// get cart id from user id:
+function cartId(userId) {
+  return cart.getCartByOwnerId(userId).then((cart) => {
+    return cart[0]._id;
+  });
+}
+
 const exports = {
   createListing,
+  addListingToCart,
   getListingsbyLoggedInUser,
+  deleteListingFromCart,
   getListingsbyUser,
+  getListingsByCartId,
+  getListingsInCartbyLoggedInUser,
+  getListingsInCartByUser,
   getListingsByCollection,
   getListingsByAlbumId,
   getListingById,

@@ -10,6 +10,22 @@ export async function createListing(req, res) {
   }
 }
 
+export async function getListingsByCartId(req, res) {
+  try {
+    const listings = await Listing.find({
+      in_cart: req.params.id,
+    })
+      .sort("title")
+      .populate({
+        path: "in_cart",
+        populate: { path: "owner" },
+      });
+    res.json(listings);
+  } catch (err) {
+    return res.status(400).json(err);
+  }
+}
+
 export async function getListingsByCollection(req, res) {
   try {
     const listings = await Listing.find({
