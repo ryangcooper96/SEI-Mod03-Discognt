@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useEffect } from 'react'
+import { NavLink} from 'react-router-dom'
 import useUser from '../../hooks/useUser'
 import listing from "../../utils/listing"
 import cart from "../../utils/cart"
@@ -8,21 +9,22 @@ import "./ListingCard.css"
 
 function ListingCard({ listing }) {
 
+    const [basket, setBasket] = useState([]);
     const { user } = useUser();
-    console.log(user);
-
+    
     // OBTAIN USER BASKET
     useEffect(() => {
         async function getCart() {
             const userCart = await cart.getCartByOwnerId(user._id)
-            console.log(userCart)
+            setBasket([...userCart])
         }
         getCart()
     }, [user])
 
     // ADD TO BASKET
-    async function handleAddToBasket(e) {
-        console.log(e.target.value)
+    function handleAddToBasket() {
+        // function from utils/cart.js to add to add listing to basket (listing._id)
+        // getCart()
     }
     
     // NEED TO FIND A WAY TO GET THE USER ASSOCIATED WITH A LISTING
@@ -32,13 +34,12 @@ function ListingCard({ listing }) {
 
     // IF LISTING BELONGS TO USER THEN DIRECT TO UPDATE LISTING PAGE
     function isListingInBasket() {
-        console.log(listing.id)
+        return (basket.every((item) => (item._id !== listing.id)))
     }    
 
-
-
-if (listing) {
+if (listing && isListingInBasket()) {
     return (
+        
         <div className='ListingCard'>
             <div className='ListingCard-user'>
                 <span className="material-symbols-outlined">
@@ -56,33 +57,21 @@ if (listing) {
                 <span className='ListingCard-price'>Price: <span>£ {listing.price}</span></span>
                 <span className='ListingCard-description'>"{listing.description}"</span>
             </div>
-            {/* <button className='ListingCard-button'>
-                <span>Add to Basket</span>
-                <span className="material-symbols-outlined">
-                    add_shopping_cart
-                </span>
-                <span className="material-symbols-outlined">
-                    remove_shopping_cart
-                </span>
-            </button> */}
             {isListingOwnedByUser() ? (
+                <NavLink to='/dashboard/listings/' >
                 <button className='ListingCard-button'>
                     <span>Update Listing</span>
                     <span className="material-symbols-outlined">
                         album
                     </span>
-                </button>) 
+                </button>
+                </NavLink>) 
                 : 
                 (<button className='ListingCard-button' value={listing._id} onClick={handleAddToBasket}>
-                    {}
                     <span>Add to Basket</span>
                     <span className="material-symbols-outlined">
                         add_shopping_cart
-                    </span>
-                    <span>Remove from Basket</span>
-                    <span className="material-symbols-outlined">
-                        remove_shopping_cart
-                    </span>                    
+                    </span>                  
                 </button>)
             }
         </div>)

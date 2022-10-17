@@ -86,8 +86,10 @@ function createListing(listing) {
 // get listings in collection of logged in user
 function getListingsbyLoggedInUser() {
   const userId = loggedInUser(); // from token
+  console.log('userID:' + userId);
   return collectionId(userId).then((id) => {
     return getListingsByCollection(id).then((listings) => {
+      console.log(listings);
       return listings;
     });
   });
@@ -107,6 +109,7 @@ function getListingsByCollection(collectionId) {
   return fetch(BASE_URL + "collection/" + collectionId, {
     method: "GET",
   }).then((res) => {
+
     if (res.ok) return res.json();
     throw new Error("Listings not found.");
   });
@@ -164,6 +167,7 @@ function loggedInUser() {
 // get collection id from user id:
 function collectionId(userId) {
   return collection.get(userId).then((collection) => {
+    console.log('CollectionID:' + collection[0]._id)
     return collection[0]._id;
   });
 }
