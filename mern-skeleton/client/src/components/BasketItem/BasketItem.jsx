@@ -28,7 +28,7 @@ function BasketItem({handleClick, item}) {
         <span className="material-symbols-outlined">
           account_circle
         </span>
-        <span>Seller | Seller Rating</span>
+          <span> Seller | Seller Rating</span>
         <span className="material-symbols-outlined">
           star
         </span>

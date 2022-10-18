@@ -35,6 +35,10 @@
     transition: 0.5s;
 }
 
+.Listings-navlink {
+    text-decoration: none;
+}
+
 .Listings-button span {
     font-weight: 300;
     padding-left: 5px;

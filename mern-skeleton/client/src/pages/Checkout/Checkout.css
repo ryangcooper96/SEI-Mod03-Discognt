@@ -1,16 +1,65 @@
+.checkout-wrapper {
+    padding: 5vh 10vw;
+}
+
+.checkout-wrapper h2 {
+    font-weight: 300;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
 .stripe-wrapper {
     display: flex;
-    justify-content: center;
-    margin: 50px 0;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.stripe-wrapper h3{
+    font-size: 22px;
+    font-weight: 300;
 }
 
 .stripeForm {
- display: flex;
- flex-direction: column;
- align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.payment-element {
+    margin: 20px 0;
 }
 
 #stripeSubmit {
-    margin: 10px;
-    width: 80px;
+    font-weight: 300;
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+
+    background: rgb(120, 120, 120);
+    color: whitesmoke;
+
+    outline: none;
+    border: 2px solid;
+    padding: 0px;
+    border-radius: 5px;
+    margin-left: 0px;
+    transition: 0.5s;
+}
+
+#stripeSubmit span {
+    font-weight: 300;
+
+}
+
+#stripeSubmit:hover {
+    background: rgb(50, 50, 50);
+    transition: 0.5s;
+}
+
+#stripeSubmit:active {
+    transform: scale(0.95) translateY(5px);
+    transition: 0.3s;
 }

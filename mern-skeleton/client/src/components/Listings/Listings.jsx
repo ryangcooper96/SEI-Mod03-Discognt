@@ -26,7 +26,7 @@ function Listings({ releaseId }) {
     <div className='Listings'>
       <h2>Listings</h2>
       <div className='Listings-container'>
-        <NavLink to={`/dashboard/listings/new/${releaseId}`}>
+        <NavLink className='Listings-navlink' to={`/dashboard/listings/new/${releaseId}`}>
           <button className='Listings-button'>
             <span>Create Listing</span>
             <span className="material-symbols-outlined">

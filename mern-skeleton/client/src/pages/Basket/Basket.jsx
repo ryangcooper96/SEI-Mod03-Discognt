@@ -54,7 +54,11 @@ function Basket() {
     // need a function to fetch the basket contents from the backend so they can be presented in a list on the frontend
 
   return (
+    <div className="basket-wrapper">
+          <h2>{user.name}'s Basket</h2>
+          <hr></hr>
     <div className='Basket'>
+        
         {basket.map((item) => {
                 console.log("item: ",item)
               return (<BasketItem handleClick={handleClick} item={item} key={item._id}/>)
@@ -62,6 +66,7 @@ function Basket() {
         <h4 className='Basket-subtotal'>SUBTOTAL: <span>£{subtotal}</span></h4>
         <NavLink to="/checkout" state={{subtotal: subtotal}}><button className='Basket-checkout'>Checkout</button></NavLink>
         </div>
+      </div>
     //okay so what does a basket need, it needs a list of everything that's been added to it and probably therefor a component for each item
     //{propsobjectlinkgoeshere.map((e) =>{
     //return (<BasketItem listingIDofsomesort={e}/>)    
