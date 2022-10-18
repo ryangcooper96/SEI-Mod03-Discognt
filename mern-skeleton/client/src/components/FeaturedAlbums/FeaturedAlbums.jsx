@@ -24,7 +24,7 @@ function FeaturedAlbums() {
       <div className='FeaturedAlbums'>
         <h2 className='FeaturedAlbums-title'>Featured Albums</h2>
         <div className='FeaturedAlbums-resultCards'>
-          {albums.map((result) => (<ResultCard result={result} key={result.id}/>))}
+          {albums.map((result) => (<ResultCard result={result} location={"marketplace"} key={result.id}/>))}
         </div>
     </div>
   )

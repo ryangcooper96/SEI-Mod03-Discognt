@@ -13,6 +13,7 @@
 
 .ResultCard a {
     text-decoration: none;
+    color: inherit;
 }
 
 .ResultCard:hover {
@@ -75,14 +76,14 @@
 
 .ResultCard-text h2 {
     margin: 0;
-    font-size: 18px;
     font-weight: 400;
+    font-size: 15px;
 }
 
 .ResultCard-text h3 {
     margin: 0;
-    font-size: 15px;
     font-weight: 300;
+    font-size: 12px;
     color: rgb(100,100,100);
     display: -webkit-box;
     -webkit-line-clamp: 3;

@@ -13,8 +13,9 @@ function ResultCard( { result, location }) {
                 <img src={result.cover_image ? result.cover_image : result.images[0].resource_url} alt={result.title}/>
             </div>
             <div className='ResultCard-text'>
-                {/* <h2>{result.title}</h2> */}
-                <h3>{result.title}</h3>
+                {result.artists ? <h2>{result.artists[0].name}</h2> : null}
+                {result.artists ? <h3>{result.title}</h3> : <h3>{result.title}</h3> }
+
             </div>
         </div>
         </Link>

@@ -9,9 +9,13 @@
 	align-items: space-between;
 
 	position: relative;
-	min-height: 100vh;
+	min-height: calc(100vh - 90px);
 }
 
 .page-wrapper {
-	margin: 50px 0;
+	margin: 50px 0 40px 0;
+}
+
+.page-wrapper > * {
+	min-height: calc(100vh - 50px);
 }

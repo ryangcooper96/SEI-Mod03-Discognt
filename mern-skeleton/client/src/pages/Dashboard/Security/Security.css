@@ -7,16 +7,20 @@
 }
 
 .securityForm {
-        margin: 0px 0;
-        background-color: whitesmoke;
-        border-radius: 5px;
+    margin: 0px;
+    background-color: whitesmoke;
+    border-radius: 5px;
 }
 
 .securityForm input {
-border: 5px;
+    border: 5px;
+    border-radius: 3px;
+    padding: 0 10px;
+    box-sizing: border-box;
     margin: 10px;
     height: 30px;
     width: 90%;
+    text-transform: capitalize;
 }
 
 .security-submit-button {

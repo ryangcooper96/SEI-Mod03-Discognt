@@ -14,7 +14,6 @@ import ProductPage from "../ProductPage/ProductPage";
 import ArtistsPage from "../ArtistsPage/ArtistsPage";
 import ArtistPage from "../ArtistPage/ArtistPage";
 import Checkout from "../Checkout/Checkout";
-import BasketPage from "../BasketPage/BasketPage";
 
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -55,7 +54,6 @@ function App() {
             <Route exact path="/checkout" element={<Checkout />} />
             <Route exact path="/signup" element={<SignupPage />} />
             <Route exact path="/login" element={<LoginPage />} />
-            <Route exact path="/basket" element={<BasketPage />} />
             <Route exact path="/checkout" element={<Checkout />} />
             <Route
               exact

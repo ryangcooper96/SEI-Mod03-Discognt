@@ -1,12 +1,14 @@
 .Home {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-
-    /* min-height: 100vh; */
-    /* margin-top: 30px; */
+    
     padding: 5vh 10vw;
+    
+    background-image: url("https://media.gq-magazine.co.uk/photos/5d139bc67fcc8e76bb8201d7/16:9/w_1600%2Cc_limit/Record-hp-GQ-7Jun17_istock_b.jpg");
+    background-repeat: none;
+    background-position: center;
 }
 
 .Home > * {
@@ -22,7 +24,7 @@
     width: 100%;
     box-sizing: border-box;
     
-    background: whitesmoke;
+    background:rgba(245, 245, 245, 0.8);
     border-radius: 10px;
     padding: 2vh 5vw;
 }

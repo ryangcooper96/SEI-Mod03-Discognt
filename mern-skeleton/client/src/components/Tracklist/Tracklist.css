@@ -14,11 +14,15 @@
 .Tracklist-table {
     width: 100%;
     margin-top: 10px;
+
     text-align: right;
+    font-weight: 200;
+    font-size: 12px;
+
     border: 1px solid rgb(150,150,150);
     border-collapse: collapse;
+
     color: rgb(50,50,50);
-    font-weight: 200;
 }
 
 .Tracklist-table tr td:first-child,
