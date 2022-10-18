@@ -2,6 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import userService from "../../utils/userService";
 import collection from "../../utils/collection.js";
+import cart from "../../utils/cart.js";
 import useUser from "../../hooks/useUser";
 
 function SignupForm({ updateMessage }) {
@@ -34,9 +35,10 @@ function SignupForm({ updateMessage }) {
       await userService.signup(state);
       // Let <App> know a user has signed up!
       handleSignupOrLogin();
-      // create collection with user set as owner
+      // create collection and basket with user set as owner
       let ownerId = await userService.getUser()._id;
       await collection.create(ownerId);
+      await cart.createCart(ownerId);
       // Successfully signed up - show GamePage
       navigate("/");
     } catch (err) {
