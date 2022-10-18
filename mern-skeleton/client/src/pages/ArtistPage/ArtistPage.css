@@ -1,4 +1,4 @@
-.ProductPage {
+.ArtistPage {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -9,7 +9,7 @@
     box-sizing: border-box;
 }
 
-.ProductPage-pageControl {
+.ArtistPage-pageControl {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -18,7 +18,7 @@
     width: 100%;
 }
 
-.ProductPage-pageControl .material-symbols-outlined {
+.ArtistPage-pageControl .material-symbols-outlined {
     font-size: 32px;
     color: rgba(10, 10, 10, 0.75);
     transition: 0.5s;
@@ -29,20 +29,20 @@
         'opsz' 48
 }
 
-.ProductPage-favourite {
+.ArtistPage-favourite {
     font-size: 24px;
     font-weight: 200;
     margin-left: auto;
 }
 
-.ProductPage-favourite span:hover {
+.ArtistPage-favourite span:hover {
     transform: scale(1.1);
     font-weight: 400;
     color: rgba(200, 10, 10, 0.75);
     transition: 0.5s;
 }
 
-.ProductPage-favourite .material-symbols-outlined {
+.ArtistPage-favourite .material-symbols-outlined {
     font-variation-settings:
     'FILL' 1,
     'wght' 400,
@@ -50,11 +50,11 @@
     'opsz' 48
 }
 
-.ProductPage-productContainer > * {
+.ArtistPage-productContainer > * {
     margin: 5px 0;
 }
 
-.ProductPage-productContainer {
+.ArtistPage-productContainer {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -69,33 +69,33 @@
     border-radius: 17px;
 }
 
-.ProductPage-productInfo {
+.ArtistPage-productInfo {
     background: white;
     border-radius: 10px;
     padding: 15px;
 }
 
-.ProductPage-productInfo h1,
-.ProductPage-productInfo h2,
-.ProductPage-productInfo h3 {
+.ArtistPage-productInfo h1,
+.ArtistPage-productInfo h2,
+.ArtistPage-productInfo h3 {
     margin: 0;
     font-family: 'Rubik Dirt', cursive;
     font-weight: 400;
 }
 
-.ProductPage-productInfo h1 {
+.ArtistPage-productInfo h1 {
     font-size: xx-large;
 }
 
-.ProductPage-productInfo h2 {
+.ArtistPage-productInfo h2 {
     font-size: x-large;
 }
 
-.ProductPage-productInfo h3 {
+.ArtistPage-productInfo h3 {
     font-size: large;
 }
 
-.ProductPage-productInfo p {
+.ArtistPage-productInfo p {
     margin: 5px 0 0 0;
     font-size: 14px;
     font-weight: 200;
@@ -105,14 +105,14 @@
     overflow: hidden;
 }
 
-.ProductPage-productInfo p.closed {
+.ArtistPage-productInfo p.closed {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-.ProductPage-productInfo p.open {
+.ArtistPage-productInfo p.open {
     display: block;
     overflow: visible;
 }
@@ -127,7 +127,7 @@
 
 /* Mobile */
 @media screen and (min-width: 320px) and (max-width: 480px) {
-    .ProductPage-productContainer > * {
+    .ArtistPage-productContainer > * {
         width: 100%;
     }
 
@@ -135,7 +135,7 @@
         order: 2;
     }
 
-    .ProductPage-productInfo {
+    .ArtistPage-productInfo {
         order: 1;
     }
 
@@ -159,7 +159,7 @@
         width: calc(50% - 5px);
     }
         
-    .ProductPage-productInfo {
+    .ArtistPage-productInfo {
         order: 1;
     }
         
@@ -182,7 +182,7 @@
         width: calc(50% - 5px);
     }
         
-    .ProductPage-productInfo {
+    .ArtistPage-productInfo {
         order: 1;
         width: calc(50% - 5px);
         box-sizing: border-box;

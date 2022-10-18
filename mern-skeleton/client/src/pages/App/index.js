@@ -12,6 +12,7 @@ import Marketplace from "../Marketplace/Marketplace";
 import Dashboard from "../Dashboard/Dashboard";
 import ProductPage from "../ProductPage/ProductPage";
 import ArtistsPage from "../ArtistsPage/ArtistsPage";
+import ArtistPage from "../ArtistPage/ArtistPage";
 import Checkout from "../Checkout/Checkout";
 import BasketPage from "../BasketPage/BasketPage";
 
@@ -47,6 +48,7 @@ function App() {
           <Routes>
             <Route exact path="/" element={<HomePage />} />
             <Route exact path="/artists" element={<ArtistsPage />} />
+            <Route exact path="/artists/:id" element={<ArtistPage />} />
             <Route exact path="/marketplace" element={<Marketplace />} />
             <Route exact path="/marketplace/:id" element={<ProductPage />} />
             <Route exact path="/basket" element={<Basket />} />
