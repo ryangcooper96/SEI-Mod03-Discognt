@@ -1,11 +1,26 @@
+.basket-wrapper {
+    /* display: flex;
+    justify-content: space-around; */
+    padding: 5vh 10vw;
+}
+
+.basket-wrapper h2 {
+    font-weight: 300;
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+
 .Basket {
     display: flex;
     flex-flow: column nowrap;
     justify-content: flex-start;
     align-items: flex-end;
-    
-    padding: 5vh 10vw;
+    width: 40vw;
+    margin-left: 39vw;
 }
+
+
 
 .Basket-subtotal {
     color: #464646;
@@ -19,7 +34,33 @@
 }
 
 .Basket-checkout {
-    color: #464646;
     font-weight: 300;
-    margin-right: 10px;
+    width: 100px;
+    height: 30px;
+    font-size: 12px;
+
+    background: rgb(120, 120, 120);
+    color: whitesmoke;
+
+    outline: none;
+    border: 2px solid;
+    padding: 0px;
+    border-radius: 5px;
+    margin-left: 0px;
+    transition: 0.5s;
+}
+
+.Basket-checkout span {
+    font-weight: 300;
+
+}
+
+.Basket-checkout:hover {
+    background: rgb(50, 50, 50);
+    transition: 0.5s;
+}
+
+.Basket-checkout:active {
+    transform: scale(0.95) translateY(5px);
+    transition: 0.3s;
 }
