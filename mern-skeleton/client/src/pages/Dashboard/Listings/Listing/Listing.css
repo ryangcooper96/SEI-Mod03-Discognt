@@ -17,10 +17,20 @@
     align-items: center;
 }
 
+.dashboard-listing-form-element {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    align-items: flex-start;
+    font-size: 14px;
+    font-weight: 300;
+    margin: 10px;
+}
+
 .dashboard-listing-input {
     height: 30px;
-    width: 25%;
-    margin: 10px;
+    margin: 5px 0;
+    width: 75%;
     border: 5px;
     border-radius: 5px;
     /* background-color: rgba(50, 50, 50, 1); */

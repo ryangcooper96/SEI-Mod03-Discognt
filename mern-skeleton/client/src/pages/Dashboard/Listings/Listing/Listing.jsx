@@ -41,7 +41,7 @@ function Listing(props) {
     useEffect(() => {
         async function fetchListing() {
             const listingData = await listingService.getListingById(props.listingId);
-            setState(() => ({...listingData}))
+            setState(() => ({ ...listingData }))
         }
         fetchListing()
     }, [props])
@@ -52,28 +52,37 @@ function Listing(props) {
 
 
     console.log(props)
-if (isObjectPopulated(state)) {
-    return (
-        <div className="dashboard-listing-wrapper">
-            <h4>{state.title}</h4>
-            {/* <p>
+    if (isObjectPopulated(state)) {
+        return (
+            <div className="dashboard-listing-wrapper">
+                <h4>{state.title}</h4>
+                {/* <p>
                 Condition: {state.condition}, price: £{`${state.price}`}, description:{" "}
                 {state.description}
             </p> */}
-            {/* <button onClick={() => handleUpdate(props.listingId)}>Update</button> */}
-            <form className="dashboard-listing-form" onSubmit={handleUpdate}>
-                <input className="dashboard-listing-input" name='condition' type='text' placeholder={`${state.condition}`} value={state.condition} onChange={handleChange} />
-                <input className="dashboard-listing-input" name='price' type='number' placeholder={`${state.price}`} value={state.price} onChange={handleChange} />
-                <textarea className="dashboard-listing-input" name='description' type='text' placeholder={`${state.description}`} value={state.description} onChange={handleChange} />
-                <button className="dashboard-listing-button"><span>Update</span></button>
-            </form>
+                {/* <button onClick={() => handleUpdate(props.listingId)}>Update</button> */}
+                <form className="dashboard-listing-form" onSubmit={handleUpdate}>
+                    <div className="dashboard-listing-form-element">
+                        <label for='condition'>Condition</label>
+                        <input className="dashboard-listing-input" name='condition' type='text' placeholder={`${state.condition}`} value={state.condition} onChange={handleChange} />
+                    </div>
+                    <div className="dashboard-listing-form-element">
+                        <label for='price'>Price</label>
+                        <input className="dashboard-listing-input" name='price' type='number' placeholder={`${state.price}`} value={state.price} onChange={handleChange} />
+                    </div>
+                    <div className="dashboard-listing-form-element">
+                        <label for="description">Description</label>
+                        <textarea className="dashboard-listing-input" name='description' type='text' placeholder={`${state.description}`} value={state.description} onChange={handleChange} />
+                    </div>
+                    <button className="dashboard-listing-button"><span>Update</span></button>
+                </form>
 
 
 
-            <button className="dashboard-listing-button" onClick={() => handleDelete(props.listingId)}>Delete</button>
-        </div>
-    );
-}    
+                <button className="dashboard-listing-button" onClick={() => handleDelete(props.listingId)}>Delete</button>
+            </div>
+        );
+    }
 }
 
 export default Listing;
