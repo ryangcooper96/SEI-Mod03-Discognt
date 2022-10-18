@@ -83,6 +83,11 @@
     margin: 2px 0;
 }
 
+.ListingCard-navlink {
+    text-decoration: none;
+    width: 100%;
+}
+
 .ListingCard-button {
     display: flex;
     flex-flow: row nowrap;

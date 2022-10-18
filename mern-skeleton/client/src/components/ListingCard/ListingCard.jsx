@@ -65,7 +65,7 @@ if (listing && isListingInBasket()) {
                 <span className='ListingCard-description'>"{listing.description}"</span>
             </div>
             {isListingOwnedByUser() ? (
-                <NavLink to='/dashboard/listings/' >
+                <NavLink to='/dashboard/listings/' className='ListingCard-navlink'>
                 <button className='ListingCard-button' >
                     <span>Update Listing</span>
                     <span className="material-symbols-outlined">
