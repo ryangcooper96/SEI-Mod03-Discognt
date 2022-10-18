@@ -19,6 +19,7 @@ function ListingCard({ listing }) {
             setBasket([...userCart])
         }
         getCart()
+        console.log(user)
     }, [user])
 
     // ADD TO BASKET
@@ -72,7 +73,7 @@ if (listing && isListingInBasket()) {
                     </span>
                 </button>
                 </NavLink>) 
-                : 
+                :  
                 (<button className='ListingCard-button' onClick={() => (handleAddToBasket(listing._id))}>
                     <span>Add to Basket</span>
                     <span className="material-symbols-outlined">
