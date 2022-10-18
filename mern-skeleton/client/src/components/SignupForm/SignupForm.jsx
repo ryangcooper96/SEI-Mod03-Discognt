@@ -4,6 +4,7 @@ import userService from "../../utils/userService";
 import collection from "../../utils/collection.js";
 import cart from "../../utils/cart.js";
 import useUser from "../../hooks/useUser";
+import './SignupForm.css'
 
 function SignupForm({ updateMessage }) {
   const navigate = useNavigate();
@@ -56,8 +57,8 @@ function SignupForm({ updateMessage }) {
   };
 
   return (
-    <div>
-      <header className="header-footer">Sign Up</header>
+    <div className="signup-form-wrapper">
+      <header>Sign Up</header>
       <form className="form-horizontal" onSubmit={handleSubmit}>
         <div className="form-group">
           <div className="col-sm-12">
@@ -160,13 +161,13 @@ function SignupForm({ updateMessage }) {
           </div>
         </div>
 
-        <div className="form-group">
+        <div className="submit-group">
           <div className="col-sm-12 text-center">
-            <button className="btn btn-default" disabled={isFormInvalid()}>
+            <button className="signup-button" disabled={isFormInvalid()}>
               Sign Up
             </button>
             &nbsp;&nbsp;
-            <Link to="/">Cancel</Link>
+            <Link to="/" className="cancel-link">Cancel</Link>
           </div>
         </div>
       </form>

@@ -1,9 +1,52 @@
 .securityForm, .security-wrapper {
     display: flex;
     flex-direction: column;
-    width: 50vw;
+    width: 35vw;
+    align-items: center;
+    padding: 5px;
 }
 
 .securityForm {
-        margin: 50px 0;
+        margin: 0px 0;
+        background-color: whitesmoke;
+        border-radius: 5px;
+}
+
+.securityForm input {
+border: 5px;
+    margin: 10px;
+    height: 30px;
+    width: 90%;
+}
+
+.security-submit-button {
+
+    width: 50px;
+    height: 30px;
+    font-size: 12px;
+
+    background: rgb(120, 120, 120);
+    color: whitesmoke;
+
+    outline: none;
+    border: 2px solid;
+    padding: 0px;
+    border-radius: 5px;
+    margin-left: 0px;
+    transition: 0.5s;
+}
+
+.security-submit-button span {
+    font-weight: 300;
+
+}
+
+.security-submit-button:hover {
+    background: rgb(50, 50, 50);
+    transition: 0.5s;
+}
+
+.security-submit-button:active {
+    transform: scale(0.95) translateY(5px);
+    transition: 0.3s;
 }

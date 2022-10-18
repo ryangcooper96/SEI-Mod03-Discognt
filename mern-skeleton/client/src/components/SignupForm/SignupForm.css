@@ -1,0 +1,58 @@
+.signup-form-wrapper {
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.signup-form-wrapper input {
+    border: 5px;
+    margin: 10px;
+    height: 30px;
+}
+
+.signup-form-wrapper header{
+    margin-left: 10px;
+}
+
+.signup-form-wrapper .submit-group{
+    margin-left: 10px;
+}
+
+.cancel-link {
+    color: #444444;
+    text-decoration: none;
+}
+
+
+
+.signup-button {
+
+    width: 50px;
+    height: 30px;
+    font-size: 12px;
+
+    background: rgb(120, 120, 120);
+    color: whitesmoke;
+
+    outline: none;
+    border: 2px solid;
+    padding: 0px;
+    border-radius: 5px;
+    margin: 0px;
+    transition: 0.5s;
+}
+
+.signup-button span {
+    font-weight: 300;
+
+}
+
+.signup-button:hover {
+    background: rgb(50, 50, 50);
+    transition: 0.5s;
+}
+
+.signup-button:active {
+    transform: scale(0.95) translateY(5px);
+    transition: 0.3s;
+}

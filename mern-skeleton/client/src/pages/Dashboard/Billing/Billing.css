@@ -1,15 +1,57 @@
-.billingForm, .creditcard-wrapper {
+.billingForm,
+.creditcard-wrapper {
     display: flex;
     flex-direction: column;
-    width: 50vw;
- margin-top: 10px;
+    width: 35vw;
+    margin-top: 10px;
+    align-items: center;
 }
 
 .billingForm {
-    margin: 50px 0;
+        margin: 0px 0;
+            background-color: whitesmoke;
+            border-radius: 5px;
+}
+
+.billingForm input, select {
+    border: 5px;
+    margin: 10px;
+    height: 30px;
+    width: 90%;
 }
 
 .billingElement {
     margin-top: 10px;
 }
 
+.billing-submit-button {
+
+    width: 50px;
+    height: 30px;
+    font-size: 12px;
+
+    background: rgb(120, 120, 120);
+    color: whitesmoke;
+
+    outline: none;
+    border: 2px solid;
+    padding: 0px;
+    border-radius: 5px;
+    margin-left: 0px;
+    transition: 0.5s;
+}
+
+.billing-submit-button span {
+    font-weight: 300;
+
+}
+
+.billing-submit-button:hover {
+    background: rgb(50, 50, 50);
+    transition: 0.5s;
+}
+
+.billing-submit-button:active {
+    transform: scale(0.95) translateY(5px);
+    transition: 0.3s;
+}

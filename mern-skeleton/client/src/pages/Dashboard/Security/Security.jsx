@@ -33,9 +33,9 @@ function Security() {
                         <input type='text' placeholder='email' value={state.email} onChange={handleChange} name='email'></input>
                         <input type='text' placeholder='confirm email' value={state.emailConfirm} onChange={handleChange} name='emailConfirm'></input>
                         <input type='text' placeholder='password' value={state.password} onChange={handleChange} name='password'></input>
-                        <input type='text' placeholder='billing address line 1' value={state.passwordConfirm} onChange={handleChange} name='passwordConfirm'></input>
+                        <input type='text' placeholder='confirm password' value={state.passwordConfirm} onChange={handleChange} name='passwordConfirm'></input>
 
-                        <button>submit</button></div>
+                    <button className='security-submit-button'>submit</button></div>
             </form>
         </div>
     )

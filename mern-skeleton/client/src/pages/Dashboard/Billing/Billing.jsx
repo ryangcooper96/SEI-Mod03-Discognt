@@ -39,8 +39,8 @@ function Billing() {
                       <input type='text' className='billingElement' placeholder='billing address line 3' value={state.address3} onChange={handleChange} name='address3'></input>
                       <input type='text' className='billingElement' placeholder='billing address zip/postal code' value={state.postcode} onChange={handleChange} name='postcode'></input>
               
-                      <button className='billingElement'>submit</button></div>) :
-            (<button>submit</button>)
+                      <button className='billing-submit-button'>submit</button></div>) :
+                  (<button className='billing-submit-button'>submit</button>)
             }
         </form>   
         </div>
