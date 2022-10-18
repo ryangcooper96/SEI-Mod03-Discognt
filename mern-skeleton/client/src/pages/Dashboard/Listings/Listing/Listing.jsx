@@ -2,6 +2,7 @@ import React from "react";
 import listingService from "../../../../utils/listing";
 import { NavLink } from 'react-router-dom'
 import { useEffect } from "react";
+import './Listing.css'
 
 function Listing(props) {
 
@@ -53,23 +54,23 @@ function Listing(props) {
     console.log(props)
 if (isObjectPopulated(state)) {
     return (
-        <div>
-            <h4>Title: {state.title}</h4>
-            <p>
+        <div className="dashboard-listing-wrapper">
+            <h4>{state.title}</h4>
+            {/* <p>
                 Condition: {state.condition}, price: £{`${state.price}`}, description:{" "}
                 {state.description}
-            </p>
+            </p> */}
             {/* <button onClick={() => handleUpdate(props.listingId)}>Update</button> */}
-            <form onSubmit={handleUpdate}>
-                <input name='condition' type='text' placeholder={`${state.condition}`} value={state.condition} onChange={handleChange} />
-                <input name='price' type='number' placeholder={`${state.price}`} value={state.price} onChange={handleChange} />
-                <textarea name='description' type='text' placeholder={`${state.description}`} value={state.description} onChange={handleChange} />
-                <button>update</button>
+            <form className="dashboard-listing-form" onSubmit={handleUpdate}>
+                <input className="dashboard-listing-input" name='condition' type='text' placeholder={`${state.condition}`} value={state.condition} onChange={handleChange} />
+                <input className="dashboard-listing-input" name='price' type='number' placeholder={`${state.price}`} value={state.price} onChange={handleChange} />
+                <textarea className="dashboard-listing-input" name='description' type='text' placeholder={`${state.description}`} value={state.description} onChange={handleChange} />
+                <button className="dashboard-listing-button"><span>Update</span></button>
             </form>
 
 
 
-            <button onClick={() => handleDelete(props.listingId)}>Delete</button>
+            <button className="dashboard-listing-button" onClick={() => handleDelete(props.listingId)}>Delete</button>
         </div>
     );
 }    

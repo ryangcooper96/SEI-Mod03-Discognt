@@ -5,3 +5,61 @@
   align-items: center;
   margin: 50px 0;
 }
+
+.login-element-wrapper {
+  background-color: whitesmoke;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.login-element-wrapper input {
+  border: 5px;
+  margin: 10px;
+  height: 30px;
+}
+
+.login-element-wrapper header {
+  margin-left: 10px;
+}
+
+.login-element-wrapper .submit-group {
+  margin-left: 10px;
+}
+
+.cancel-link {
+  color: #444444;
+  text-decoration: none;
+}
+
+
+.login-button {
+
+  width: 50px;
+  height: 30px;
+  font-size: 12px;
+
+  background: rgb(120, 120, 120);
+  color: whitesmoke;
+
+  outline: none;
+  border: 2px solid;
+  padding: 0px;
+  border-radius: 5px;
+  margin-left: 10px;
+  transition: 0.5s;
+}
+
+.login-button span {
+  font-weight: 300;
+
+}
+
+.login-button:hover {
+  background: rgb(50, 50, 50);
+  transition: 0.5s;
+}
+
+.login-button:active {
+  transform: scale(0.95) translateY(5px);
+  transition: 0.3s;
+}
