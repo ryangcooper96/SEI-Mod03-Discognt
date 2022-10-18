@@ -11,6 +11,7 @@ import {NavLink} from "react-router-dom"
 
 function Basket() {
 
+    
     const [basket, setBasket] = useState([])
     const [subtotal, setSubtotal] = useState(0);
     const { user } = useUser();
@@ -53,13 +54,13 @@ function Basket() {
     // need a function to fetch the basket contents from the backend so they can be presented in a list on the frontend
 
   return (
-    <div className='basket-wrapper'>
+    <div className='Basket'>
         {basket.map((item) => {
                 console.log("item: ",item)
               return (<BasketItem handleClick={handleClick} item={item} key={item._id}/>)
         })}
-        <h4>subtotal: £{subtotal}</h4>
-        <NavLink to="/checkout" state={{subtotal: subtotal}}><button>Checkout</button></NavLink>
+        <h4 className='Basket-subtotal'>SUBTOTAL: <span>£{subtotal}</span></h4>
+        <NavLink to="/checkout" state={{subtotal: subtotal}}><button className='Basket-checkout'>Checkout</button></NavLink>
         </div>
     //okay so what does a basket need, it needs a list of everything that's been added to it and probably therefor a component for each item
     //{propsobjectlinkgoeshere.map((e) =>{

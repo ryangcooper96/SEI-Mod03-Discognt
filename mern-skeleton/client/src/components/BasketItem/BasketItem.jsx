@@ -1,5 +1,5 @@
 import React from 'react'
-import ListingCard from '../ListingCard/ListingCard'
+import './BasketItem.css'
 
 function BasketItem({handleClick, item}) {
   //when the cart CRUD controllers are in update accordingly
@@ -23,8 +23,8 @@ function BasketItem({handleClick, item}) {
     console.log(item._id)
     
     return (
-      <div className='ListingCard'>
-      <div className='ListingCard-user'>
+      <div className='BasketItem'>
+      <div className='BasketItem-user'>
         <span className="material-symbols-outlined">
           account_circle
         </span>
@@ -34,14 +34,14 @@ function BasketItem({handleClick, item}) {
         </span>
       </div>
       <hr></hr>
-      <div className='ListingCard-info'>
-        <span className='ListingCard-format'>Title: <span>{item.title}</span></span>
-        <span className='ListingCard-format'>Format: <span>{item.format}</span></span>
-        <span className='ListingCard-condition'>Condition: <span>{item.condition}</span></span>
-        <span className='ListingCard-price'>Price: <span>£ {item.price.toFixed(2)}</span></span>
-        <span className='ListingCard-description'>"{item.description}"</span>
+      <div className='BasketItem-info'>
+        <span className='BasketItem-title'>Title: <span>{item.title}</span></span>
+        <span className='BasketItem-format'>Format: <span>{item.format}</span></span>
+        <span className='BasketItem-condition'>Condition: <span>{item.condition}</span></span>
+        <span className='BasketItem-price'>Price: <span>£ {item.price.toFixed(2)}</span></span>
+        <span className='BasketItem-description'>"{item.description}"</span>
       </div>
-      <button className='ListingCard-button' onClick={() => (handleClick(item._id))}>
+      <button className='BasketItem-button' onClick={() => (handleClick(item._id))}>
         <span>Remove from Cart</span>
         {/* <span className="material-symbols-outlined">
           add_shopping_cart

@@ -1,3 +1,25 @@
-.basket-wrapper {
-    margin: 50px 0;
+.Basket {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    
+    padding: 5vh 10vw;
+}
+
+.Basket-subtotal {
+    color: #464646;
+    font-weight: 300;
+    margin-right: 10px;
+}
+
+.Basket-subtotal span {
+    color: rgb(50, 50, 50);
+    font-weight: 500;
+}
+
+.Basket-checkout {
+    color: #464646;
+    font-weight: 300;
+    margin-right: 10px;
 }

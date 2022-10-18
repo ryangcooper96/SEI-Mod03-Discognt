@@ -1,0 +1,123 @@
+.BasketItem {
+    /* height: 180px; */
+    /* min-width: 180px;  */
+    width: 100%;
+    min-width: 280px;
+    max-width: 500px;
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    background: whitesmoke;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.BasketItem hr {
+    height: 1px;
+    width: 100%;
+    margin: 4px 2px 1px 2px;
+
+    background: rgb(50, 50, 50);
+    border: none;
+}
+
+.BasketItem-user {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    color: rgba(10, 10, 10, 0.75);
+}
+
+.BasketItem-user span:nth-child(1) {
+    font-size: 32px;
+}
+
+.BasketItem-user span:nth-child(2) {
+    padding: 0 2px 0 7px;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.BasketItem-user span:nth-child(3) {
+    font-size: 18px;
+}
+
+.BasketItem-user .material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
+}
+
+.BasketItem-info {
+    display: flex;
+    flex-flow: column nowrap;
+    padding-top: 5px;
+    width: 100%;
+
+    font-size: 14px;
+}
+
+.BasketItem-description {
+    padding: 7px 5px 10px 5px;
+    color: rgb(90, 90, 90);
+    font-style: italic;
+    font-weight: 500;
+}
+
+.BasketItem-title,
+.BasketItem-condition,
+.BasketItem-price,
+.BasketItem-format {
+    font-weight: 200;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.BasketItem-info span span {
+    font-weight: 400;
+    margin: 2px 0;
+}
+
+.BasketItem-button {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    font-size: 14px;
+
+    background: rgb(120, 120, 120);
+    color: whitesmoke;
+
+    outline: none;
+    border: 2px solid;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+.BasketItem-button span {
+    font-weight: 300;
+    padding-left: 5px;
+}
+
+.BasketItem-button:hover {
+    background: rgb(50, 50, 50);
+    transition: 0.5s;
+}
+
+.BasketItem-button:active {
+    transform: scale(0.95) translateY(5px);
+    transition: 0.3s;
+}
