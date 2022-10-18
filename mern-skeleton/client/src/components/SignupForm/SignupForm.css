@@ -6,7 +6,9 @@
 
 .signup-form-wrapper input {
     border: 5px;
+    border-radius: 3px;
     margin: 10px;
+    padding: 0 10px;
     height: 30px;
 }
 
@@ -22,8 +24,6 @@
     color: #444444;
     text-decoration: none;
 }
-
-
 
 .signup-button {
 
